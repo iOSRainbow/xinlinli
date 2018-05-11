@@ -14,6 +14,8 @@
 
     NSMutableArray * dataArray,*goodsArray;
     
+    NSArray * bannerAry;
+    
     UIView * mainView;
     
     UITableView * tableview;

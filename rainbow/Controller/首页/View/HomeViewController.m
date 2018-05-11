@@ -23,7 +23,7 @@
 #import "JZListViewController.h"
 #import "JZTypeListViewController.h"
 #import "JZDetailViewController.h"
-#import "ActvtiyViewController.h"
+#import "RuleViewController.h"
 
 #define Rate 280/640
 #define TopScrollHeigt SCREEN_WIDTH*Rate
@@ -360,15 +360,14 @@
     
     if([tag isEqualToString:@"indexPhoto_banner"]){
     
-        NSArray * ary =response[@"data"];
+        bannerAry =response[@"data"];
         NSMutableArray * bannerPicArray=[[NSMutableArray alloc] init];
         
-        for (NSDictionary *item in ary) {
+        for (NSDictionary *item in bannerAry) {
             NSString *picUrl=[item objectForKey:@"indexphoto"];
             [bannerPicArray addObject:[NSString stringWithFormat:@"%@common/showPic.do?filename=%@&filetype=a",urlStr,picUrl]];
         }
         
-        NSLog(@"bannerPicArray＝%@",bannerPicArray);
        
         FFScrollView* ffScr=[[FFScrollView alloc]initPageViewWithFrame:CGRectMake(0, 0, SCREEN_WIDTH,TopScrollHeigt) views:bannerPicArray tag:@"home"];
         ffScr.pageViewDelegate=self;
@@ -472,7 +471,10 @@
 
 -(void)scrollViewDidClickedAtPage:(NSInteger)pageNumber{
 
-    if(pageNumber==1){
+    NSDictionary * dic =bannerAry[pageNumber];
+    NSString * href =dic[@"href"];
+    
+    if([href isEqualToString:@"居家服务"]){
     
         
         JZTypeListViewController * list =[[JZTypeListViewController alloc] init];
@@ -481,23 +483,24 @@
         list.type=@"a0976e80-7f69-4c58-aafe-2ffd939dabbc";
         [self.navigationController pushViewController:list animated:YES];
     
-    }else if (pageNumber==0){
-    
-      //  ActvtiyViewController * act =[[ActvtiyViewController alloc] init];
-      //  act.hidesBottomBarWhenPushed=YES;
-        //[self.navigationController pushViewController:act animated:YES];
-        
-    
-    }else if(pageNumber==2) {
+    }else if ([href isEqualToString:@"积分兑换"]){
     
         Mine_DuiHuanListViewController * list =[[Mine_DuiHuanListViewController alloc] init];
-        
         list.hidesBottomBarWhenPushed=YES;
-        
         [self.navigationController pushViewController:list animated:YES];
+        
     
+    }else{
+    
+        if(![LSFEasy isEmpty:href]){
+            
+            RuleViewController * list =[[RuleViewController alloc] init];
+            list.hidesBottomBarWhenPushed=YES;
+            list.webUrl=href;
+            [self.navigationController pushViewController:list animated:YES];
+            
+        }
     }
-
 }
 
 @end

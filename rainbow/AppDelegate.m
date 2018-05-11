@@ -33,33 +33,18 @@ static BOOL isProduction = NO;
     // Override point for customization after application launch.
    
     [NSThread sleepForTimeInterval:1];//启动页驻留时间加长
-
     
     self.window=[[UIWindow alloc]initWithFrame:[UIScreen mainScreen].bounds];
     self.window.backgroundColor=[UIColor whiteColor];
     [self.window makeKeyAndVisible];
-    
 
   //  [WXApi registerApp:@"wxd45ec89e2b4f0d2c" withDescription:@"新邻里"];
-
     
     //注册极光推送
    [self registerJpush:launchOptions];
     
-    
-    
-    //是否显示引导页(默认是NO)
-    BOOL isFirstRun=[[myUserDefaults objectForKey:@"firstRun"] boolValue];
-    if (!isFirstRun) {
-        LeadViewController *lvc=[[LeadViewController alloc]init];
-        _window.rootViewController=lvc;
-    }
-    else
-    {
-       [self StartMain];
-    }
-
-  
+    LeadViewController *lvc=[[LeadViewController alloc]init];
+    _window.rootViewController=lvc;
     
     return YES;
 }

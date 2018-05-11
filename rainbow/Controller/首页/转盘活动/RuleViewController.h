@@ -9,8 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface RuleViewController : CommonViewController
-{
-    UITextView * textview;
-
-}
+@property(nonatomic,strong)NSString * webUrl;
 @end

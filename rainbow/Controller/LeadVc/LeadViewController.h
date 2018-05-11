@@ -10,9 +10,10 @@
 
 @interface LeadViewController : UIViewController
 {
-    UIImageView * appImg;
     NSTimer * timer;
     NSInteger _timestamp;
     UILabel * timeLb;
+    UIWebView * webview;
+    
 }
 @end

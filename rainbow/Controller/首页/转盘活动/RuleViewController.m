@@ -17,16 +17,13 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    [self setNavTitle:@"活动规则"];
+    [self setNavTitle:@"活动"];
     
-    textview=[[UITextView alloc] initWithFrame:CGRectMake(0,NavigationHeight, self.view.frame.size.width, ViewHeight)];
-    textview.textColor=[UIColor grayColor];
-    textview.editable=NO;
-    
-    NSString * str =@"活动时间：2018年1月18日-28日，共10天\n活动规则：活动期间内，通过新邻里手机客户端参与抽奖的用户，均视为成功参与此次活动；每个用户只可参与一次。\n活动奖励：成功参与此次活动的用户，均可获得抽取所得相对应的商品。\n奖品发放：交易完成后，3个工作日内联系参与用户\n次活动最终解释权归新邻里所有。";
-    textview.text=str;
-    textview.font=[UIFont systemFontOfSize:14.0f];
-    [self.view addSubview:textview];
+   UIWebView* webview=[[UIWebView alloc] initWithFrame:CGRectMake(0,NavigationHeight, SCREEN_WIDTH, ViewHeight)];
+    [webview sizeToFit];
+    [webview loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:_webUrl]]];
+    [self.view addSubview:webview];
+
 }
 
 - (void)didReceiveMemoryWarning {
