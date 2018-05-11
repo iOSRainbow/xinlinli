@@ -102,6 +102,8 @@
 		0A2E8D992027F4A0008EA719 /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A2E8D982027F499008EA719 /* ImageIO.framework */; };
 		0A2FE03F1EF7B21E008F007B /* VipViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A2FE03E1EF7B21E008F007B /* VipViewController.m */; };
 		0A2FE0421EF7C8EE008F007B /* JZListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A2FE0411EF7C8EE008F007B /* JZListViewController.m */; };
+		0A3AFF8820A5677000D14DF3 /* AddDoorCardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A3AFF8720A5677000D14DF3 /* AddDoorCardViewController.m */; };
+		0A3AFF8B20A56C3B00D14DF3 /* DoorCardRecordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A3AFF8A20A56C3B00D14DF3 /* DoorCardRecordViewController.m */; };
 		0A3CFC241FC0251F00BD5584 /* CommonNavtionController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A3CFC231FC0251F00BD5584 /* CommonNavtionController.m */; };
 		0A3EC7261F3074CF0043FE36 /* libWeChatSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A3EC7201F3074CF0043FE36 /* libWeChatSDK.a */; };
 		0A3EC7271F3074CF0043FE36 /* read_me.txt in Resources */ = {isa = PBXBuildFile; fileRef = 0A3EC7211F3074CF0043FE36 /* read_me.txt */; };
@@ -430,6 +432,10 @@
 		0A2FE03E1EF7B21E008F007B /* VipViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VipViewController.m; sourceTree = "<group>"; };
 		0A2FE0401EF7C8EE008F007B /* JZListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JZListViewController.h; sourceTree = "<group>"; };
 		0A2FE0411EF7C8EE008F007B /* JZListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JZListViewController.m; sourceTree = "<group>"; };
+		0A3AFF8620A5677000D14DF3 /* AddDoorCardViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AddDoorCardViewController.h; sourceTree = "<group>"; };
+		0A3AFF8720A5677000D14DF3 /* AddDoorCardViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AddDoorCardViewController.m; sourceTree = "<group>"; };
+		0A3AFF8920A56C3B00D14DF3 /* DoorCardRecordViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DoorCardRecordViewController.h; sourceTree = "<group>"; };
+		0A3AFF8A20A56C3B00D14DF3 /* DoorCardRecordViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DoorCardRecordViewController.m; sourceTree = "<group>"; };
 		0A3CFC221FC0251F00BD5584 /* CommonNavtionController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CommonNavtionController.h; sourceTree = "<group>"; };
 		0A3CFC231FC0251F00BD5584 /* CommonNavtionController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CommonNavtionController.m; sourceTree = "<group>"; };
 		0A3EC7201F3074CF0043FE36 /* libWeChatSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libWeChatSDK.a; sourceTree = "<group>"; };
@@ -1197,6 +1203,10 @@
 				0A2170032044E790003F2F6D /* GetAddressListViewController.m */,
 				0A2170052044EC30003F2F6D /* addressAddViewController.h */,
 				0A2170062044EC30003F2F6D /* addressAddViewController.m */,
+				0A3AFF8620A5677000D14DF3 /* AddDoorCardViewController.h */,
+				0A3AFF8720A5677000D14DF3 /* AddDoorCardViewController.m */,
+				0A3AFF8920A56C3B00D14DF3 /* DoorCardRecordViewController.h */,
+				0A3AFF8A20A56C3B00D14DF3 /* DoorCardRecordViewController.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -2188,6 +2198,7 @@
 				0A20BE681EC0173C0008857D /* IQToolbar.m in Sources */,
 				0A9111D31F4A6B76002DA009 /* JZTypeListViewController.m in Sources */,
 				0A03C7B31E82577F00642ECE /* SDWebImageDownloader.m in Sources */,
+				0A3AFF8820A5677000D14DF3 /* AddDoorCardViewController.m in Sources */,
 				0A00AFB11E319B8F00FC9312 /* LSFEasy.m in Sources */,
 				0A89778C1EC321B000B57BA8 /* AddGoodViewController.m in Sources */,
 				0A00AFAE1E3194B800FC9312 /* LSFUtil.m in Sources */,
@@ -2257,6 +2268,7 @@
 				0A0645151E78CD850077615E /* CommonViewController.m in Sources */,
 				0AE3AE7D1EC2BC3000FA69AE /* ZLPhotoPickerAssetsViewController.m in Sources */,
 				0AA89CB31EF91A71002FA4DC /* CommentListViewController.m in Sources */,
+				0A3AFF8B20A56C3B00D14DF3 /* DoorCardRecordViewController.m in Sources */,
 				0A19B1941EC42B0700F3D29C /* RoomViewController.m in Sources */,
 				0AB764591EC6AE7300EE22D4 /* AddFriendViewController.m in Sources */,
 				0AE3AE7B1EC2BC3000FA69AE /* UIViewController+Alert.m in Sources */,

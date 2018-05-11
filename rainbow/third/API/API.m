@@ -889,4 +889,30 @@
     [params setObject:goodsId forKey:@"id"];
     [httpRequest httpPostRequest:@"app/orders/addUI.do" params:params];
 }
+
+//进行绑定
+-(void)usercard_add:(NSString*)cardno2{
+    
+    NSMutableDictionary *params = [[NSMutableDictionary alloc] init];
+    [params setObject:TOKEN forKey:@"userId"];
+    [params setObject:cardno2 forKey:@"cardno2"];
+    [httpRequest httpPostRequest:@"app/usercard/add.do" params:params];
+}
+
+//获取绑定的列表
+-(void)usercard_list{
+ 
+    NSMutableDictionary *params = [[NSMutableDictionary alloc] init];
+    [params setObject:TOKEN forKey:@"userId"];
+    [httpRequest httpPostRequest:@"app/usercard/list.do" params:params];
+}
+
+//挂失
+-(void)usercard_loss:(NSString*)cardId{
+    
+    NSMutableDictionary *params = [[NSMutableDictionary alloc] init];
+    [params setObject:TOKEN forKey:@"userId"];
+    [params setObject:cardId forKey:@"id"];
+    [httpRequest httpPostRequest:@"app/usercard/loss.do" params:params];
+}
 @end

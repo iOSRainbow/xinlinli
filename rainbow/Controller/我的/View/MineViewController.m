@@ -19,6 +19,7 @@
 #import "DiscountListViewController.h"
 #import "Mine_iphonViewController.h"
 #import "GetAddressListViewController.h"
+#import "AddDoorCardViewController.h"
 @interface MineViewController ()
 
 @end
@@ -49,9 +50,9 @@
     navView.hidden=YES;
     
     
-    dataArray=[[NSMutableArray alloc] initWithObjects:@"我的资料",@"收货地址管理",@"社区地址管理",@"抵用卷",@"抵用卷兑换",@"积分任务",@"礼品兑换", nil];
+    dataArray=[[NSMutableArray alloc] initWithObjects:@"我的资料",@"收货地址管理",@"社区地址管理",@"抵用卷",@"抵用卷兑换",@"积分任务",@"礼品兑换",@"门卡绑定", nil];
 
-    imageArray=[[NSMutableArray alloc] initWithObjects:@"lsf19",@"lsf20",@"lsf39",@"lsf66",@"lsf101",@"lsf26",@"lsf25", nil];
+    imageArray=[[NSMutableArray alloc] initWithObjects:@"lsf19",@"lsf20",@"lsf39",@"lsf66",@"lsf101",@"lsf26",@"lsf25",@"lsf117", nil];
 
     scr=[LSFUtil add_scollview:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT-TabbarStautsHeight) Tag:1 View:self.view co:CGSizeMake(0, SCREEN_HEIGHT)];
     
@@ -222,6 +223,13 @@
         Mine_DuiHuanListViewController * addressList =[[Mine_DuiHuanListViewController alloc] init];
         addressList.hidesBottomBarWhenPushed=YES;
         [self.navigationController pushViewController:addressList animated:YES];
+    }
+    else if (indexPath.row==7){
+        
+        AddDoorCardViewController * AddDoor =[[AddDoorCardViewController alloc] init];
+        AddDoor.hidesBottomBarWhenPushed=YES;
+        [self.navigationController pushViewController:AddDoor animated:YES];
+        
     }
 }
 - (void)didReceiveMemoryWarning {

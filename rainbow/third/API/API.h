@@ -277,4 +277,17 @@
 //提交订单厨师数据
 -(void)orders_addUI:(NSString*)goodsId;
 
+/*
+ 
+1、app/usercard/list.do上传userId获取绑定的列表                                     2、app/usercard/add.do上传userId，cardno2(输入的卡号)，进行绑定     3、app/usercard/loss.do上传id(list.do接口获取的id)，进行挂失，里面有个status如果是1，就是绑定成功，如果是2就是挂失成功，所以在list页面，判断这个值，来设置挂失键是否可点击，可点击时最好挑个弹窗让用户在确认一下，因为这个操作不可逆
+*/
+
+//进行绑定
+-(void)usercard_add:(NSString*)cardno2;
+
+//获取绑定的列表
+-(void)usercard_list;
+
+//挂失
+-(void)usercard_loss:(NSString*)cardId;
 @end
