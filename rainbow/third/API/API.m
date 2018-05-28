@@ -732,8 +732,8 @@
 
     NSMutableDictionary *params = [[NSMutableDictionary alloc] init];
     [params setObject:TOKEN forKey:@"userId"];
-    [params setObject:password forKey:type==1?@"sn":@"cardno"];
-    [httpRequest httpPostRequest:type==1?@"app/offset/exchangSN.do":@"app/money/addRefillcard.do" params:params];
+    [params setObject:password forKey:type==1?@"id":@"cardno"];
+    [httpRequest httpPostRequest:type==1?@"app/redeem/add.do":@"app/money/addRefillcard.do" params:params];
 }
 
 
