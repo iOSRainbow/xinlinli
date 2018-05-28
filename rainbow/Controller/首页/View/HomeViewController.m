@@ -496,7 +496,7 @@
             
             RuleViewController * list =[[RuleViewController alloc] init];
             list.hidesBottomBarWhenPushed=YES;
-            list.webUrl=href;
+            list.webUrl=[NSString stringWithFormat:@"%@&userId=%@",href,TOKEN];
             [self.navigationController pushViewController:list animated:YES];
             
         }
