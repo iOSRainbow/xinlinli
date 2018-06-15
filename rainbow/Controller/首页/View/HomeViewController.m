@@ -19,11 +19,11 @@
 #import "JiaoFeiViewController.h"
 #import "OpeationBusViewController.h"
 #import "MoreTypeViewController.h"
-#import "MenJinListViewController.h"
 #import "JZListViewController.h"
 #import "JZTypeListViewController.h"
 #import "JZDetailViewController.h"
 #import "RuleViewController.h"
+#import "ScanViewController.h"
 
 #define Rate 280/640
 #define TopScrollHeigt SCREEN_WIDTH*Rate
@@ -254,10 +254,10 @@
     }
     else if ([str isEqualToString:@"门禁"]){
         
-        MenJinListViewController * list =[[MenJinListViewController alloc] init];
+        ScanViewController * list =[[ScanViewController alloc] init];
         
         list.hidesBottomBarWhenPushed=YES;
-        
+        list.type=1;
         [self.navigationController pushViewController:list animated:YES];
         
     }else if ([str isEqualToString:@"邻里圈"]){

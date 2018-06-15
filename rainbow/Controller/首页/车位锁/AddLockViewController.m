@@ -19,14 +19,11 @@
 -(void)actNavRightBtn{
 
     ScanViewController * scan =[[ScanViewController alloc] init];
-    scan.showsZBarControls=NO;
     scan.completeBlockNSString=^(NSString *str){
     
         titleText.text=str;
-    
     };
     [self.navigationController pushViewController:scan animated:YES];
-
 
 }
 - (void)viewDidLoad {
@@ -38,7 +35,6 @@
     
     UIView * view =[LSFUtil viewWithRect:CGRectMake(0, NavigationHeight, SCREEN_WIDTH,155) view:self.view backgroundColor:white];
     
-   
     [LSFUtil labelName:@"注:请填写正确得链接码,否则将无法使用您的车位锁" fontSize:font12 rect:CGRectMake(10,10,SCREEN_WIDTH-20, 40) View:view Alignment:0 Color:MS_RGB(250,82,2) Tag:1];
 
     

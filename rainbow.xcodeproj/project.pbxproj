@@ -109,8 +109,6 @@
 		0A3EC7271F3074CF0043FE36 /* read_me.txt in Resources */ = {isa = PBXBuildFile; fileRef = 0A3EC7211F3074CF0043FE36 /* read_me.txt */; };
 		0A3EC7281F3074CF0043FE36 /* README.txt in Resources */ = {isa = PBXBuildFile; fileRef = 0A3EC7221F3074CF0043FE36 /* README.txt */; };
 		0A65FAF31ED0136A0037A0E9 /* BluetoothUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A65FAF21ED0136A0037A0E9 /* BluetoothUtils.m */; };
-		0A6DC9CA1F21A7F50016A8A0 /* MenJinListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A6DC9C91F21A7F50016A8A0 /* MenJinListViewController.m */; };
-		0A6DC9CD1F21BB5C0016A8A0 /* OpenDoorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A6DC9CC1F21BB5C0016A8A0 /* OpenDoorViewController.m */; };
 		0A6EAD4D1ED1343C002F2C5A /* YouhuiViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A6EAD4C1ED1343C002F2C5A /* YouhuiViewController.m */; };
 		0A6EAD501ED1344A002F2C5A /* GuoQiViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A6EAD4F1ED1344A002F2C5A /* GuoQiViewController.m */; };
 		0A7776AD1F2ACE5800B95FF3 /* DiscountListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A7776AC1F2ACE5800B95FF3 /* DiscountListViewController.m */; };
@@ -118,6 +116,9 @@
 		0A9111D31F4A6B76002DA009 /* JZTypeListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A9111D21F4A6B76002DA009 /* JZTypeListViewController.m */; };
 		0A9111D61F4A732B002DA009 /* GoodsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A9111D51F4A732B002DA009 /* GoodsCell.m */; };
 		0A9111DD1F4A894B002DA009 /* LeadViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A9111DB1F4A894B002DA009 /* LeadViewController.m */; };
+		0A966FB220D1FA0A00CFDB82 /* KddSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A966FB120D1FA0A00CFDB82 /* KddSocket.m */; };
+		0A966FB820D1FA5500CFDB82 /* AsyncSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A966FB520D1FA5500CFDB82 /* AsyncSocket.m */; };
+		0A966FB920D1FA5500CFDB82 /* AsyncUdpSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A966FB720D1FA5500CFDB82 /* AsyncUdpSocket.m */; };
 		0A9D67FA1EC082A900B3C966 /* Mine_infoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A9D67F91EC082A900B3C966 /* Mine_infoViewController.m */; };
 		0A9D67FD1EC0874C00B3C966 /* Mine_nickNameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A9D67FC1EC0874C00B3C966 /* Mine_nickNameViewController.m */; };
 		0A9D68001EC089CB00B3C966 /* Mine_SexViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A9D67FF1EC089CB00B3C966 /* Mine_SexViewController.m */; };
@@ -446,10 +447,6 @@
 		0A3EC7251F3074CF0043FE36 /* WXApiObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXApiObject.h; sourceTree = "<group>"; };
 		0A65FAF11ED0136A0037A0E9 /* BluetoothUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BluetoothUtils.h; sourceTree = "<group>"; };
 		0A65FAF21ED0136A0037A0E9 /* BluetoothUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BluetoothUtils.m; sourceTree = "<group>"; };
-		0A6DC9C81F21A7F50016A8A0 /* MenJinListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenJinListViewController.h; sourceTree = "<group>"; };
-		0A6DC9C91F21A7F50016A8A0 /* MenJinListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenJinListViewController.m; sourceTree = "<group>"; };
-		0A6DC9CB1F21BB5C0016A8A0 /* OpenDoorViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OpenDoorViewController.h; sourceTree = "<group>"; };
-		0A6DC9CC1F21BB5C0016A8A0 /* OpenDoorViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OpenDoorViewController.m; sourceTree = "<group>"; };
 		0A6EAD4B1ED1343C002F2C5A /* YouhuiViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YouhuiViewController.h; sourceTree = "<group>"; };
 		0A6EAD4C1ED1343C002F2C5A /* YouhuiViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YouhuiViewController.m; sourceTree = "<group>"; };
 		0A6EAD4E1ED1344A002F2C5A /* GuoQiViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GuoQiViewController.h; sourceTree = "<group>"; };
@@ -464,6 +461,13 @@
 		0A9111D51F4A732B002DA009 /* GoodsCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GoodsCell.m; sourceTree = "<group>"; };
 		0A9111DA1F4A894B002DA009 /* LeadViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LeadViewController.h; sourceTree = "<group>"; };
 		0A9111DB1F4A894B002DA009 /* LeadViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LeadViewController.m; sourceTree = "<group>"; };
+		0A966FB020D1FA0900CFDB82 /* KddSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KddSocket.h; sourceTree = "<group>"; };
+		0A966FB120D1FA0A00CFDB82 /* KddSocket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KddSocket.m; sourceTree = "<group>"; };
+		0A966FB420D1FA5500CFDB82 /* AsyncSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AsyncSocket.h; sourceTree = "<group>"; };
+		0A966FB520D1FA5500CFDB82 /* AsyncSocket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AsyncSocket.m; sourceTree = "<group>"; };
+		0A966FB620D1FA5500CFDB82 /* AsyncUdpSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AsyncUdpSocket.h; sourceTree = "<group>"; };
+		0A966FB720D1FA5500CFDB82 /* AsyncUdpSocket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AsyncUdpSocket.m; sourceTree = "<group>"; };
+		0A966FBA20D210A700CFDB82 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		0A9D67F81EC082A900B3C966 /* Mine_infoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Mine_infoViewController.h; sourceTree = "<group>"; };
 		0A9D67F91EC082A900B3C966 /* Mine_infoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Mine_infoViewController.m; sourceTree = "<group>"; };
 		0A9D67FB1EC0874C00B3C966 /* Mine_nickNameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Mine_nickNameViewController.h; sourceTree = "<group>"; };
@@ -849,6 +853,7 @@
 		0A0644DE1E78C45E0077615E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				0A966FBA20D210A700CFDB82 /* AVFoundation.framework */,
 				0A2E8D982027F499008EA719 /* ImageIO.framework */,
 				0ABB16DF1ED6D1AE003FB15A /* libiconv.tbd */,
 				0AB93F531ECE9C3A00321B5F /* CoreData.framework */,
@@ -889,6 +894,7 @@
 		0A0644FE1E78C5420077615E /* third */ = {
 			isa = PBXGroup;
 			children = (
+				0A966FB320D1FA5500CFDB82 /* socket */,
 				0A3EC71F1F3074CF0043FE36 /* WeChatSDK */,
 				0ABB16B91ED6CD7E003FB15A /* 二维码sdk */,
 				0AD4A9AF1EC9608900374165 /* 支付宝sdk */,
@@ -932,6 +938,8 @@
 		0A06451D1E78D0610077615E /* API */ = {
 			isa = PBXGroup;
 			children = (
+				0A966FB020D1FA0900CFDB82 /* KddSocket.h */,
+				0A966FB120D1FA0A00CFDB82 /* KddSocket.m */,
 				0A06451E1E78D0610077615E /* API.h */,
 				0A06451F1E78D0610077615E /* API.m */,
 				0A0645221E78D0610077615E /* Network */,
@@ -1436,10 +1444,8 @@
 		0A6276A51F1C4745005CF8E8 /* 门禁 */ = {
 			isa = PBXGroup;
 			children = (
-				0A6DC9C81F21A7F50016A8A0 /* MenJinListViewController.h */,
-				0A6DC9C91F21A7F50016A8A0 /* MenJinListViewController.m */,
-				0A6DC9CB1F21BB5C0016A8A0 /* OpenDoorViewController.h */,
-				0A6DC9CC1F21BB5C0016A8A0 /* OpenDoorViewController.m */,
+				0ABB16DC1ED6CF6D003FB15A /* ScanViewController.h */,
+				0ABB16DD1ED6CF6D003FB15A /* ScanViewController.m */,
 			);
 			path = "门禁";
 			sourceTree = "<group>";
@@ -1451,6 +1457,17 @@
 				0A9111DB1F4A894B002DA009 /* LeadViewController.m */,
 			);
 			path = LeadVc;
+			sourceTree = "<group>";
+		};
+		0A966FB320D1FA5500CFDB82 /* socket */ = {
+			isa = PBXGroup;
+			children = (
+				0A966FB420D1FA5500CFDB82 /* AsyncSocket.h */,
+				0A966FB520D1FA5500CFDB82 /* AsyncSocket.m */,
+				0A966FB620D1FA5500CFDB82 /* AsyncUdpSocket.h */,
+				0A966FB720D1FA5500CFDB82 /* AsyncUdpSocket.m */,
+			);
+			path = socket;
 			sourceTree = "<group>";
 		};
 		0AB7645D1EC6C42B00EE22D4 /* NullSafe */ = {
@@ -1472,8 +1489,6 @@
 				0AB93F5D1ECE9F7500321B5F /* OpeationBusViewController.m */,
 				0AD92A131ED42D1700268F56 /* ModfiyBusViewController.h */,
 				0AD92A141ED42D1700268F56 /* ModfiyBusViewController.m */,
-				0ABB16DC1ED6CF6D003FB15A /* ScanViewController.h */,
-				0ABB16DD1ED6CF6D003FB15A /* ScanViewController.m */,
 			);
 			path = "车位锁";
 			sourceTree = "<group>";
@@ -2163,7 +2178,6 @@
 				0AE3AE821EC2BC3000FA69AE /* ZLPhotoPickerFooterCollectionReusableView.m in Sources */,
 				0A3CFC241FC0251F00BD5584 /* CommonNavtionController.m in Sources */,
 				0AD0556B204E1E6600B0379B /* ActvityCell.m in Sources */,
-				0A6DC9CA1F21A7F50016A8A0 /* MenJinListViewController.m in Sources */,
 				0A20BE2B1EC00F3E0008857D /* JZViewController.m in Sources */,
 				0A1FDD5B1EC5583200CC9847 /* WuYeTipViewController.m in Sources */,
 				0ADA90731E304DE000812E3D /* main.m in Sources */,
@@ -2181,6 +2195,8 @@
 				0AE3AEFB1EC2C14600FA69AE /* PSTCollectionViewCell.m in Sources */,
 				0AE3AEF31EC2C14600FA69AE /* UIImage+EMGIF.m in Sources */,
 				0A20BE701EC04DE00008857D /* FFScrollView.m in Sources */,
+				0A966FB220D1FA0A00CFDB82 /* KddSocket.m in Sources */,
+				0A966FB820D1FA5500CFDB82 /* AsyncSocket.m in Sources */,
 				0AE3AEFA1EC2C14600FA69AE /* PSTCollectionView.m in Sources */,
 				0A2170012043F953003F2F6D /* GoodTypeViewController.m in Sources */,
 				0A2170042044E790003F2F6D /* GetAddressListViewController.m in Sources */,
@@ -2197,6 +2213,7 @@
 				0A20BE351EC011110008857D /* LoginViewController.m in Sources */,
 				0A20BE681EC0173C0008857D /* IQToolbar.m in Sources */,
 				0A9111D31F4A6B76002DA009 /* JZTypeListViewController.m in Sources */,
+				0A966FB920D1FA5500CFDB82 /* AsyncUdpSocket.m in Sources */,
 				0A03C7B31E82577F00642ECE /* SDWebImageDownloader.m in Sources */,
 				0A3AFF8820A5677000D14DF3 /* AddDoorCardViewController.m in Sources */,
 				0A00AFB11E319B8F00FC9312 /* LSFEasy.m in Sources */,
@@ -2214,7 +2231,6 @@
 				0AE3AE731EC2BC3000FA69AE /* ZLPhotoPickerBrowserViewController.m in Sources */,
 				0AE3AEF91EC2C14600FA69AE /* NSIndexPath+PSTCollectionViewAdditions.m in Sources */,
 				0A2170072044EC30003F2F6D /* addressAddViewController.m in Sources */,
-				0A6DC9CD1F21BB5C0016A8A0 /* OpenDoorViewController.m in Sources */,
 				0A9D680C1EC0936A00B3C966 /* Mine_addressListViewController.m in Sources */,
 				0A20BE601EC0173C0008857D /* IQUIWindow+Hierarchy.m in Sources */,
 				0A9D67FD1EC0874C00B3C966 /* Mine_nickNameViewController.m in Sources */,
@@ -2377,7 +2393,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
-				PROVISIONING_PROFILE = "988b4087-4482-4f09-af24-6f5855367afd";
+				PROVISIONING_PROFILE = "6845c5ac-c539-42de-bfe0-da7bf5d6289b";
 				PROVISIONING_PROFILE_SPECIFIER = xinLingLiDistri;
 				SDKROOT = iphoneos;
 			};
@@ -2427,7 +2443,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
-				PROVISIONING_PROFILE = "988b4087-4482-4f09-af24-6f5855367afd";
+				PROVISIONING_PROFILE = "6845c5ac-c539-42de-bfe0-da7bf5d6289b";
 				PROVISIONING_PROFILE_SPECIFIER = xinLingLiDistri;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
@@ -2461,7 +2477,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.nwh.xinlingli;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "988b4087-4482-4f09-af24-6f5855367afd";
+				PROVISIONING_PROFILE = "6845c5ac-c539-42de-bfe0-da7bf5d6289b";
 				PROVISIONING_PROFILE_SPECIFIER = xinLingLiDistri;
 			};
 			name = Debug;
@@ -2493,7 +2509,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.nwh.xinlingli;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "988b4087-4482-4f09-af24-6f5855367afd";
+				PROVISIONING_PROFILE = "6845c5ac-c539-42de-bfe0-da7bf5d6289b";
 				PROVISIONING_PROFILE_SPECIFIER = xinLingLiDistri;
 			};
 			name = Release;
