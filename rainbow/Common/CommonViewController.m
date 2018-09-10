@@ -85,7 +85,7 @@
     }
     else
     {
-        [self buttonPhotoAlignment:@"lsf7" hilPhoto:@"lsf7" rect:CGRectMake(5, StatusHeight+7, 30, 30) title:0 select:@selector(actNavBack) Tag:0 View:navView textColor:nil Size:nil background:nil];
+       navBackBtn= [self buttonPhotoAlignment:@"lsf7" hilPhoto:@"lsf7" rect:CGRectMake(5, StatusHeight+7, 30, 30) title:0 select:@selector(actNavBack) Tag:0 View:navView textColor:nil Size:nil background:nil];
     }
     
 }

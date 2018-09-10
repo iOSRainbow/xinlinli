@@ -34,10 +34,6 @@
 
     [super viewDidAppear:animated];
     
-    
-    Api * api =[[Api alloc] init:self tag:@"vip_vipuser"];
-    [api vip_vipuser];
-    
     Api * api1 =[[Api alloc] init:self tag:@"pointsCountByUserId"];
     [api1 pointsCountByUserId];
 
@@ -48,7 +44,6 @@
     // Do any additional setup after loading the view.
     
     navView.hidden=YES;
-    
     
     dataArray=[[NSMutableArray alloc] initWithObjects:@"我的资料",@"收货地址管理",@"社区地址管理",@"抵用卷",@"抵用卷兑换",@"积分任务",@"礼品兑换",@"门卡绑定", nil];
 
@@ -70,7 +65,7 @@
     viewAlah.alpha=0.2;
     
     
-    NSArray * ary=[[NSArray alloc] initWithObjects:@"积分",@"签到",@"账户余额", nil];
+    NSArray * ary=[[NSArray alloc] initWithObjects:@"积分",@"签到",@"礼金", nil];
     for(int i=0;i<ary.count;i++){
     
         [LSFUtil labelName:ary[i] fontSize:font14 rect:CGRectMake((SCREEN_WIDTH/3)*i, 195, SCREEN_WIDTH/3, 20) View:img Alignment:1 Color:white Tag:1];
@@ -268,7 +263,8 @@
         intergalLb.text=[NSString stringWithFormat:@"(%@)",dic[@"points"]];
         signBtn.userInteractionEnabled = [dic[@"isSign"] integerValue]==0?YES:NO;
         signLb.text=[NSString stringWithFormat:@"(%@)",dic[@"isSign"]];
-        
+        collectLb.text=[NSString stringWithFormat:@"(%@)",dic[@"balance"]];
+
        
         if(![dic[@"logtime"] isEqual:logtime]){
             
@@ -281,12 +277,6 @@
         
         [myUserDefaults synchronize];
 
-   }else if ([tag isEqualToString:@"vip_vipuser"]){
-       
-       NSDictionary * dic=response[@"data"];
-
-       collectLb.text=[NSString stringWithFormat:@"(%@)",dic[@"balance"]];
-       
    }
  
 }

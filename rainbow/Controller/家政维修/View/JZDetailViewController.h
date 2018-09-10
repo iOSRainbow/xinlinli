@@ -18,6 +18,7 @@
     NSArray * picArray;
     UILabel * GoodsName;
     NSString * idStr;
+    NSInteger goodNum;
 
 }
 

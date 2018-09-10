@@ -56,4 +56,8 @@
 
 #pragma mark 将十六进制的字符串转换成NSString
 +(NSString *)convertHexStrToString:(NSString *)str;
+
+
++(NSMutableAttributedString*)ButtonAttriSring:(NSString *)title color:(UIColor*)color image:(NSString*)image type:(NSInteger)type rect:(CGRect)rect
+;
 @end

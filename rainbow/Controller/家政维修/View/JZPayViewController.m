@@ -26,8 +26,6 @@
     
     scr=[LSFUtil add_scollview:CGRectMake(0, NavigationHeight, SCREEN_WIDTH, ViewHeight-50) Tag:1 View:self.view co:CGSizeMake(0, 380)];
     
-    num=1;
-    
     payType=1;
     offsetcount=0;
     vouchercellId=@"";
@@ -42,11 +40,9 @@
     
     UIView * view =[LSFUtil viewWithRect:CGRectMake(0, BottomHeight, SCREEN_WIDTH, 50) view:self.view backgroundColor:white];
     
-    priceLable=[LSFUtil labelName:nil fontSize:font14 rect:CGRectMake(0,0,SCREEN_WIDTH-120-20,50) View:view Alignment:2 Color:Red Tag:1];
+    priceInfoLable=[LSFUtil labelName:nil fontSize:font14 rect:CGRectMake(10,0,SCREEN_WIDTH-120-20,50) View:view Alignment:0 Color:Red Tag:1];
     
     [self buttonPhotoAlignment:nil hilPhoto:nil rect:CGRectMake(SCREEN_WIDTH-120,0, 120, 50) title:@"提交订单" select:@selector(PayAction) Tag:1 View:view textColor:white Size:font18 background:Red];
-
-    [self alretDatePickViewDate];
 
 }
 -(void)getData{
@@ -103,7 +99,6 @@
 
     UIView * view =[LSFUtil viewWithRect:CGRectMake(0, 0, SCREEN_WIDTH, 80) view:scr backgroundColor:white];
     
-    
     [LSFUtil addSubviewImage:@"lsf39" rect:CGRectMake(10, 30, 20, 20) View:view Tag:1];
     
     tipLable=[LSFUtil labelName:@"请选择地址" fontSize:font14 rect:CGRectMake(50,0,100,80) View:view Alignment:0 Color:black Tag:1];
@@ -120,42 +115,18 @@
     [self buttonPhotoAlignment:nil hilPhoto:nil rect:CGRectMake(0, 0, SCREEN_WIDTH,80) title:nil select:@selector(SelectAddress) Tag:1 View:view textColor:nil Size:nil background:nil];
     
     
-    [self serviceTimeView:view.frame.size.height];
+    [self goodsInfoView:view.frame.size.height];
 
 }
 
--(void)serviceTimeView:(CGFloat)hy{
-
-
-    UIView * view =[LSFUtil viewWithRect:CGRectMake(0,hy, SCREEN_WIDTH,50) view:scr backgroundColor:nil];
-
-    
-    [LSFUtil addSubviewImage:@"lsf40" rect:CGRectMake(10, 15, 20, 20) View:view Tag:1];
-    
-    
-    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-    [dateFormatter setDateFormat:@"yyyy-MM-dd HH:mm"];
-    NSString *date= [dateFormatter stringFromDate:[NSDate date]];
-    startDateLable=[LSFUtil labelName:date fontSize:font14 rect:CGRectMake(50, 0, SCREEN_WIDTH-90, 50) View:view Alignment:0 Color:gray Tag:1];
-    
-    [LSFUtil addSubviewImage:@"lsf27" rect:CGRectMake(SCREEN_WIDTH-30,15, 20, 20) View:view Tag:1];
-    
-    [self buttonPhotoAlignment:nil hilPhoto:nil rect:CGRectMake(0, 0, SCREEN_WIDTH, 50) title:nil select:@selector(TimeAction) Tag:1 View:view  textColor:nil Size:nil background:nil];
-    
-    
-    [self goodsInfoView:view.frame.size.height+hy];
-    
-}
 
 -(void)goodsInfoView:(CGFloat)hy{
 
     UIView * view1 =[LSFUtil viewWithRect:CGRectMake(0,hy, SCREEN_WIDTH,50) view:scr backgroundColor:white];
     
-    
      shopPicImg=[LSFUtil addSubviewImage:nil rect:CGRectMake(10, 5, 40, 40) View:view1 Tag:1];
 
      shopName=[LSFUtil labelName:nil fontSize:font14 rect:CGRectMake(70,0,SCREEN_WIDTH-80,50) View:view1 Alignment:0 Color:black Tag:1];
-    
     
     shopGoodName= [LSFUtil labelName:nil fontSize:font14 rect:CGRectMake(10,60+hy,SCREEN_WIDTH-20,40) View:scr Alignment:0 Color:black Tag:1];
 
@@ -163,7 +134,7 @@
     shopPrice=[LSFUtil labelName:nil fontSize:font16 rect:CGRectMake(10,110+hy,SCREEN_WIDTH-20,20) View:scr Alignment:0 Color:Red Tag:1];
     
     
-    numLable=[LSFUtil labelName:@"x1" fontSize:font14 rect:CGRectMake(0, 110+hy, SCREEN_WIDTH-10, 20) View:scr Alignment:2 Color:black Tag:1];
+    [LSFUtil labelName:[NSString stringWithFormat:@"x%i",_goodNum] fontSize:font14 rect:CGRectMake(0, 110+hy, SCREEN_WIDTH-10, 20) View:scr Alignment:2 Color:black Tag:1];
     
     [self goodsNumView:150+hy];
 
@@ -171,79 +142,58 @@
 
 -(void)goodsNumView:(CGFloat)hy{
 
-    UIView * view =[LSFUtil viewWithRect:CGRectMake(0,hy, SCREEN_WIDTH,350) view:scr backgroundColor:white];
+    UIView * view =[LSFUtil viewWithRect:CGRectMake(0,hy, SCREEN_WIDTH,255) view:scr backgroundColor:white];
     
-    scr.contentSize=CGSizeMake(0, hy+360);
-    
-    [LSFUtil labelName:@"购买数量" fontSize:font14 rect:CGRectMake(10,0, 100, 50) View:view Alignment:0 Color:black Tag:1];
-    
-    [self buttonPhotoAlignment:@"lsf82" hilPhoto:@"lsf82" rect:CGRectMake(SCREEN_WIDTH-50, 5, 40, 40) title:nil select:@selector(AddNum) Tag:1 View:view textColor:nil Size:nil background:nil];
-    
-    numLable1=[LSFUtil labelName:@"1" fontSize:font14 rect:CGRectMake(SCREEN_WIDTH-110,0,50,50) View:view Alignment:1 Color:black Tag:1];
-
-    
-    [self buttonPhotoAlignment:@"lsf81" hilPhoto:@"lsf81" rect:CGRectMake(SCREEN_WIDTH-160, 5, 40, 40) title:nil select:@selector(RemoveNum) Tag:1 View:view textColor:nil Size:nil background:nil];
-    
-    [LSFUtil setXianTiao:ColorHUI rect:CGRectMake(0, 50, SCREEN_WIDTH, 1) view:view];
-
+    scr.contentSize=CGSizeMake(0, hy+260);
     
     
-    [LSFUtil labelName:@"请选择支付方式" fontSize:font14 rect:CGRectMake(10,50, 200, 50) View:view Alignment:0 Color:black Tag:1];
+    [LSFUtil labelName:@"请选择支付方式" fontSize:font14 rect:CGRectMake(10,0, 200, 50) View:view Alignment:0 Color:black Tag:1];
   
     //
-    [LSFUtil addSubviewImage:@"lsf83" rect:CGRectMake(10,100+15,20,20) View:view Tag:1];
+    [LSFUtil addSubviewImage:@"lsf83" rect:CGRectMake(10,50+15,20,20) View:view Tag:1];
     
-    [LSFUtil labelName:@"支付宝" fontSize:font14 rect:CGRectMake(40,100, 100, 50) View:view Alignment:0 Color:black Tag:1];
+    [LSFUtil labelName:@"支付宝" fontSize:font14 rect:CGRectMake(40,50, 100, 50) View:view Alignment:0 Color:black Tag:1];
     
-    selectImg=[LSFUtil addSubviewImage:@"lsf28" rect:CGRectMake(SCREEN_WIDTH-30,100+15,20,20) View:view Tag:1];
+    selectImg=[LSFUtil addSubviewImage:@"lsf28" rect:CGRectMake(SCREEN_WIDTH-30,50+15,20,20) View:view Tag:1];
     
-    [self buttonPhotoAlignment:nil hilPhoto:nil rect:CGRectMake(0, 100, SCREEN_WIDTH, 50) title:nil select:@selector(SelectImgAction:) Tag:1 View:view textColor:nil Size:nil background:nil];
+    [self buttonPhotoAlignment:nil hilPhoto:nil rect:CGRectMake(0, 50, SCREEN_WIDTH, 50) title:nil select:@selector(SelectImgAction:) Tag:1 View:view textColor:nil Size:nil background:nil];
     
-    [LSFUtil setXianTiao:ColorHUI rect:CGRectMake(0, 149, SCREEN_WIDTH, 1) view:view];
-
+    [LSFUtil setXianTiao:ColorHUI rect:CGRectMake(0, 99, SCREEN_WIDTH, 1) view:view];
     
 //
-    [LSFUtil addSubviewImage:@"lsf90" rect:CGRectMake(10,150+15,20,20) View:view Tag:1];
+    [LSFUtil addSubviewImage:@"lsf90" rect:CGRectMake(10,100+15,20,20) View:view Tag:1];
     
-    [LSFUtil labelName:@"账户余额" fontSize:font14 rect:CGRectMake(40,150, 100, 50) View:view Alignment:0 Color:black Tag:1];
+    [LSFUtil labelName:@"账户余额" fontSize:font14 rect:CGRectMake(40,100, 100, 50) View:view Alignment:0 Color:black Tag:1];
     
-    unselectImg=[LSFUtil addSubviewImage:@"lsf44" rect:CGRectMake(SCREEN_WIDTH-30,150+15,20,20) View:view Tag:1];
+    unselectImg=[LSFUtil addSubviewImage:@"lsf44" rect:CGRectMake(SCREEN_WIDTH-30,100+15,20,20) View:view Tag:1];
     
-    [self buttonPhotoAlignment:nil hilPhoto:nil rect:CGRectMake(0, 150, SCREEN_WIDTH, 50) title:nil select:@selector(SelectImgAction:) Tag:2 View:view textColor:nil Size:nil background:nil];
+    [self buttonPhotoAlignment:nil hilPhoto:nil rect:CGRectMake(0, 100, SCREEN_WIDTH, 50) title:nil select:@selector(SelectImgAction:) Tag:2 View:view textColor:nil Size:nil background:nil];
     
+    [LSFUtil setXianTiao:ColorHUI rect:CGRectMake(0, 149, SCREEN_WIDTH, 1) view:view];
+    
+    //
+    [LSFUtil addSubviewImage:@"lsf95" rect:CGRectMake(10,150+15,20,20) View:view Tag:1];
+    [LSFUtil labelName:@"抵用卷" fontSize:font14 rect:CGRectMake(40,150, 100, 50) View:view Alignment:0 Color:black Tag:1];
+    
+    discountLable=[LSFUtil labelName:@"" fontSize:font14 rect:CGRectMake(140,150, SCREEN_WIDTH-180, 50) View:view Alignment:2 Color:gray Tag:1];
+    
+    [LSFUtil addSubviewImage:@"lsf27" rect:CGRectMake(SCREEN_WIDTH-30, 150+15, 20, 20) View:view Tag:1];
+
+    [self buttonPhotoAlignment:nil hilPhoto:nil rect:CGRectMake(0, 150, SCREEN_WIDTH, 50) title:nil select:@selector(DiYongAction) Tag:2 View:view textColor:nil Size:nil background:nil];
+    
+    //
     [LSFUtil setXianTiao:ColorHUI rect:CGRectMake(0, 199, SCREEN_WIDTH, 1) view:view];
-    
-    //
-    [LSFUtil addSubviewImage:@"lsf95" rect:CGRectMake(10,200+15,20,20) View:view Tag:1];
-    [LSFUtil labelName:@"抵用卷" fontSize:font14 rect:CGRectMake(40,200, 100, 50) View:view Alignment:0 Color:black Tag:1];
-    
-    discountLable=[LSFUtil labelName:@"" fontSize:font14 rect:CGRectMake(140,200, SCREEN_WIDTH-180, 50) View:view Alignment:2 Color:gray Tag:1];
-    
-    [LSFUtil addSubviewImage:@"lsf27" rect:CGRectMake(SCREEN_WIDTH-30, 200+15, 20, 20) View:view Tag:1];
-
-    [self buttonPhotoAlignment:nil hilPhoto:nil rect:CGRectMake(0, 200, SCREEN_WIDTH, 50) title:nil select:@selector(DiYongAction) Tag:2 View:view textColor:nil Size:nil background:nil];
-
-    
-    //
-    [LSFUtil setXianTiao:ColorHUI rect:CGRectMake(0, 249, SCREEN_WIDTH, 1) view:view];
 
 
     
-    [LSFUtil labelName:@"买家留言: " fontSize:font14 rect:CGRectMake(10,250, 100, 50) View:view Alignment:0 Color:black Tag:1];
+    [LSFUtil labelName:@"买家留言: " fontSize:font14 rect:CGRectMake(10,200, 100, 50) View:view Alignment:0 Color:black Tag:1];
 
     
-    text=[LSFUtil addTextFieldView:CGRectMake(100, 255, SCREEN_WIDTH-130, 40) Tag:1 textColor:black Alignment:0 Text:nil placeholderStr:@"请输入买家留言" View:view font:font14];
+    text=[LSFUtil addTextFieldView:CGRectMake(100, 205, SCREEN_WIDTH-130, 40) Tag:1 textColor:black Alignment:0 Text:nil placeholderStr:@"请输入买家留言" View:view font:font14];
     
-    
-    [LSFUtil setXianTiao:ColorHUI rect:CGRectMake(0, 299, SCREEN_WIDTH, 1) view:view];
-    
-    priceInfoLable=[LSFUtil labelName:nil fontSize:font14 rect:CGRectMake(0, 300, SCREEN_WIDTH-10, 50) View:view Alignment:2 Color:black Tag:1];
-
-
 }
 
 -(void)DiYongAction{
-    
     
     if(deposit==1){
         
@@ -252,8 +202,7 @@
     }
     
     DiscountListViewController * list =[[DiscountListViewController alloc] init];
-    list.price=[NSString stringWithFormat:@"%.2f",num * price];
-    
+    list.price=[NSString stringWithFormat:@"%.2f",_goodNum * price];
     
     list.array1=[redeemcells mutableCopy];
     list.array2=[voucherCustoms mutableCopy];
@@ -288,109 +237,31 @@
 }
 
 
--(void)AddNum{
-
-    num++;
- 
-    countPrice=price*(deposit==1?1:num);
-
-    [self getCountMoeny];
-
-}
--(void)RemoveNum{
-
-    if(num==1){
-    
-        num=1;
-        
-        countPrice=price*num;
-        
-        [self getCountMoeny];
-        
-        return;
-    }
-    
-    num--;
-    
-    countPrice=price*(deposit==1?1:num);
-    
-    [self getCountMoeny];
-}
 
 -(void)getCountMoeny{
-
-    
-    numLable.text=[NSString stringWithFormat:@"x%zi",num];
-    numLable1.text=[NSString stringWithFormat:@"%zi",num];
     
     if(![LSFEasy isEmpty:subprice]){
         
         offsetcount =[subprice floatValue];
         
         CGFloat count =countPrice-offsetcount;
+        
         if(count<0){
             
             count=0;
         }
-        priceLable.text=[NSString stringWithFormat:@"合计: ￥%.2f",count*discount];
-        priceInfoLable.text=[NSString stringWithFormat:@"共%zi件商品 小计 :￥%.2f",num,count*discount];
+        priceInfoLable.text=[NSString stringWithFormat:@"共%zi件商品\n合计 :￥%.2f",_goodNum,count*discount];
     }
     else{
     
     
-        priceLable.text=[NSString stringWithFormat:@"合计: ￥%.2f",countPrice*discount];
-        priceInfoLable.text=[NSString stringWithFormat:@"共%zi件商品 小计 :￥%.2f",num,countPrice*discount];
+        priceInfoLable.text=[NSString stringWithFormat:@"共%zi件商品\n合计 :￥%.2f",_goodNum,countPrice*discount];
       
     }
 
 }
 
--(void)alretDatePickViewDate
-{
-    
-    backView=[[UIView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT)];
-    backView.backgroundColor=black;
-    backView.alpha=0;
-    [self.view addSubview:backView];
-    
-    UITapGestureRecognizer*singleRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(hideBackView)];
-    singleRecognizer.numberOfTapsRequired = 1; // 单击
-    [backView addGestureRecognizer:singleRecognizer];
-    
-    
-    pickerView=[LSFUtil viewWithRect:CGRectMake(0, SCREEN_HEIGHT, SCREEN_WIDTH, 200) view:self.view backgroundColor:white];
-    
-    
-    datePicker  = [[UIDatePicker alloc] initWithFrame:CGRectMake(0,0, SCREEN_WIDTH, 200)];
-    datePicker.backgroundColor=[UIColor clearColor];
-    [datePicker setDate:[NSDate date] animated:YES];
-    [datePicker setMinimumDate:[NSDate date]];
-    
-    [datePicker setDatePickerMode:UIDatePickerModeDateAndTime];
-    [datePicker addTarget:self action:@selector(datePickerValueChanged) forControlEvents:UIControlEventValueChanged];
-    [pickerView addSubview:datePicker];
-    
-}
 
--(void)hideBackView{
-
-    backView.alpha=0;
-    [LSFUtil donghuaView:pickerView Rect:CGRectMake(0, SCREEN_HEIGHT, SCREEN_WIDTH, 200)];
-
-}
--(void)datePickerValueChanged{
-
-    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-    [dateFormatter setDateFormat:@"YYYY-MM-dd HH:mm"];
-    startDateLable.text = [dateFormatter stringFromDate:[datePicker date]];
-
-}
-
--(void)TimeAction{
-
-    backView.alpha=0.5;
-    [LSFUtil donghuaView:pickerView Rect:CGRectMake(0, SCREEN_HEIGHT-200, SCREEN_WIDTH, 200)];
-}
 -(void)SelectAddress{
 
     GetAddressListViewController * get =[[GetAddressListViewController alloc] init];
@@ -439,12 +310,10 @@
         
         [self alipay:response[@"data"]];
         [self initialPayObserver];
-        
     }
    else if([tag isEqualToString:@"order_insert"]){
         
         [self showHint:response[@"msg"]];
-        
         OrderListViewController * list =[[OrderListViewController alloc] init];
         [self.navigationController pushViewController:list animated:YES];
     }
@@ -467,6 +336,7 @@
        shopPrice.text=[NSString stringWithFormat:@"￥%@",dic[@"goodsinfo"][@"lowprice"]];
        
        discount=[dic[@"memberdegree"][@"discount"] floatValue]/100;
+     
        if(deposit==1)
        {
            discount=1.00;
@@ -475,15 +345,11 @@
        
        price=[dic[@"goodsinfo"][@"lowprice"] floatValue];
        
-       countPrice=price*num;
+       countPrice=price*_goodNum;
        
        
-       priceLable.text=[NSString stringWithFormat:@"合计: ￥%.2f",num * countPrice*discount];
-       
-       priceInfoLable.text=[NSString stringWithFormat:@"共%zi件商品 小计 :￥%.2f",num,num*countPrice*discount];
+       priceInfoLable.text=[NSString stringWithFormat:@"共%zi件商品\n合计 :￥%.2f",_goodNum,countPrice*discount];
    
-      
-       
       redeemcells=dic[@"redeemcells"];
       voucherCustoms=dic[@"voucherCustoms"];
    }
@@ -540,7 +406,7 @@
         count=0;
         payType=2;
     }
-    [api order_insert:addressName tel:addressTel address:addressLable.text goodsname:shopGoodName.text servicetime:[NSString stringWithFormat:@"%@:00",startDateLable.text] msg:text.text price:[NSString stringWithFormat:@"%.2f",price*(deposit==1?1:num)] payment:[NSString stringWithFormat:@"%zi",payType] zfbno:@"11211" voucherId:voucherId vouchercellId:vouchercellId realprice:[NSString stringWithFormat:@"%.2f",count] goodscateId:goodspacatid amount:numLable1.text];
+    [api order_insert:addressName tel:addressTel address:addressLable.text goodsname:shopGoodName.text servicetime:@"2018-08-11 09:08:00" msg:text.text price:[NSString stringWithFormat:@"%.2f",price*_goodNum] payment:[NSString stringWithFormat:@"%zi",payType] zfbno:@"支付宝支付" voucherId:voucherId vouchercellId:vouchercellId realprice:[NSString stringWithFormat:@"%.2f",count] goodscateId:goodspacatid amount:[NSString stringWithFormat:@"%zi",_goodNum]];
     
 }
 -(void)paymentFalse{

@@ -400,7 +400,7 @@
     
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
     [formatter setDateFormat:@"YYYY-MM-dd HH:mm"];
-    NSDate *confromTimesp = [NSDate dateWithTimeIntervalSince1970:[time integerValue]/1000];
+    NSDate *confromTimesp = [NSDate dateWithTimeIntervalSince1970:[time doubleValue]/1000];
     NSString *confromTimespStr = [formatter stringFromDate:confromTimesp];
     
     return  [LSFEasy isEmpty:time]?@" ":confromTimespStr;

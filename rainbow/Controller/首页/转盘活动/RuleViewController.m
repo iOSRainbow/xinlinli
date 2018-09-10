@@ -19,7 +19,7 @@
     // Do any additional setup after loading the view.
     [self setNavTitle:@"活动"];
     
-   UIWebView* webview=[[UIWebView alloc] initWithFrame:CGRectMake(0,NavigationHeight, SCREEN_WIDTH, ViewHeight)];
+    UIWebView* webview=[[UIWebView alloc] initWithFrame:CGRectMake(0,NavigationHeight, SCREEN_WIDTH, ViewHeight)];
     [webview sizeToFit];
     [webview loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:_webUrl]]];
     [self.view addSubview:webview];

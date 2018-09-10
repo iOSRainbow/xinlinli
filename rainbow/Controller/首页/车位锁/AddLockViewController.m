@@ -21,7 +21,7 @@
     ScanViewController * scan =[[ScanViewController alloc] init];
     scan.completeBlockNSString=^(NSString *str){
     
-        titleText.text=str;
+        self->titleText.text=str;
     };
     [self.navigationController pushViewController:scan animated:YES];
 

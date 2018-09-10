@@ -26,10 +26,13 @@
     BOOL isUp;
     NSInteger num;
     UILabel * infoLable;
+    NSString * qrcode;
+    NSString * name,*price,*number;
     
   
 }
 @property (nonatomic,copy)  void(^completeBlockNSString)(NSString *completeStr);
 
 @property(nonatomic,assign)NSInteger type;
+@property(nonatomic,strong)NSString*year;
 @end

@@ -7,6 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "SeletedGoodsModel.h"
+#import "SeletedGoodsCell.h"
 
 @interface GoodTypeViewController : CommonViewController<UITableViewDelegate,UITableViewDataSource>
 {
@@ -16,4 +18,7 @@
     
 }
 @property(nonatomic,strong)NSMutableArray * array;
+
+@property (nonatomic,copy)  void(^completeBlock)(SeletedGoodsModel *model);
+
 @end

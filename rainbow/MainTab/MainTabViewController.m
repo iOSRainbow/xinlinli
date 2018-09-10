@@ -13,6 +13,8 @@
 #import "JZViewController.h"
 #import "MineViewController.h"
 #import "WYViewController.h"
+#import "ScanViewController.h"
+
 #import "CommonNavtionController.h"
 
 @interface MainTabViewController ()
@@ -112,13 +114,14 @@
 
 -(CommonNavtionController*)VipVC{
     
-    VipViewController *vipVC = [[VipViewController alloc]init];
+    ScanViewController *scan = [[ScanViewController alloc]init];
+    scan.type=1;
     
-    CommonNavtionController *nav = [[CommonNavtionController alloc]initWithRootViewController:vipVC];
+    CommonNavtionController *nav = [[CommonNavtionController alloc]initWithRootViewController:scan];
     nav.navigationBarHidden=YES;
     
-    UITabBarItem *item = [[UITabBarItem alloc] initWithTitle:@"会员服务" image:[UIImage imageNamed:@"lsf14"] tag:3];
-    item.selectedImage = [[UIImage imageNamed:@"lsf15"]  imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    UITabBarItem *item = [[UITabBarItem alloc] initWithTitle:@"门禁" image:[UIImage imageNamed:@"lsf118"] tag:3];
+    item.selectedImage = [[UIImage imageNamed:@"lsf119"]  imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
     
     NSMutableDictionary *normalText = [NSMutableDictionary dictionary];
     normalText[NSForegroundColorAttributeName] = [UIColor grayColor];
@@ -129,7 +132,7 @@
     selectedText[NSForegroundColorAttributeName] = MS_RGB(250,82,2);
     [item setTitleTextAttributes:selectedText forState:UIControlStateSelected];
     
-    vipVC.tabBarItem = item;
+    scan.tabBarItem = item;
     
     return nav;
 }

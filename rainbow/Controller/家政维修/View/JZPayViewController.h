@@ -12,14 +12,7 @@
 {
     UIScrollView * scr;
     
-    UILabel * tipLable,*nameLable,*addressLable,*startDateLable,*numLable,*numLable1,*priceInfoLable,*priceLable,*discountLable;
-
-    UIView * backView,*pickerView;
-    
-    
-    UIDatePicker *datePicker;
-    
-    NSInteger num;
+    UILabel * tipLable,*nameLable,*addressLable,*priceInfoLable,*discountLable;
     
     UITextField * text;
     
@@ -41,5 +34,7 @@
     
 }
 @property(nonatomic,strong)NSString * IdStr;
+@property(nonatomic,assign)NSInteger goodNum;
+
 
 @end

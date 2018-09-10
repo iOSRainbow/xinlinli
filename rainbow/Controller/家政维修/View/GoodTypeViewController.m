@@ -20,7 +20,20 @@
     
     [self setNavTitle:@"请选择商品类型"];
     dataArray=[[NSMutableArray alloc] init];
-    dataArray=_array;
+    
+    [self addNavRightBtnWithTitle:@"完成" color:orange rect:CGRectMake(SCREEN_WIDTH-60, StatusHeight, 60, 44)];
+    
+    for(NSInteger i=0;i<_array.count;i++){
+        
+        NSDictionary * dic =_array[i];
+        SeletedGoodsModel * model = [[SeletedGoodsModel alloc] init];
+        model.goodName=dic[@"name"];
+        model.goodNum=@"0";
+        model.goodId=dic[@"id"];
+        model.lowprice=dic[@"lowprice"];
+        [dataArray addObject:model];
+    }
+    
     tableview =[LSFUtil add_tableview:CGRectMake(0, NavigationHeight, SCREEN_WIDTH, ViewHeight) Tag:1 View:self.view delegate:self dataSource:self];
     
 }
@@ -30,15 +43,6 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 
 #pragma tableview
@@ -47,7 +51,7 @@
 }
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPat{
     
-    return 50;
+    return 60;
 }
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
@@ -56,35 +60,71 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *CellWithIdentifier = @"Cell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellWithIdentifier];
+    SeletedGoodsCell *cell = [tableView dequeueReusableCellWithIdentifier:CellWithIdentifier];
     
     if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue2 reuseIdentifier:CellWithIdentifier];
         
-        
-        [LSFUtil labelName:nil fontSize:font14 rect:CGRectMake(10, 0,SCREEN_WIDTH-20, 50) View:cell Alignment:0 Color:black Tag:1];
-        
-        
-        [LSFUtil setXianTiao:ColorHUI rect:CGRectMake(0, 49, SCREEN_WIDTH, 1) view:cell];
-        
+        cell = [[SeletedGoodsCell alloc] initWithStyle:UITableViewCellStyleValue2 reuseIdentifier:CellWithIdentifier];
     }
     
-    UILabel * lb1 =(UILabel *)[cell viewWithTag:1];
     
+    SeletedGoodsModel * model =dataArray[indexPath.row];
     
-    NSDictionary * dic=dataArray[indexPath.row];
+    cell.model=model;
     
+    [cell.addBtn addTarget:self action:@selector(addGoodsNum:) forControlEvents:UIControlEventTouchUpInside];
+    cell.addBtn.tag=indexPath.row;
     
-    lb1.text=dic[@"name"];
+    [cell.removeBtn addTarget:self action:@selector(removeGoodsNum:) forControlEvents:UIControlEventTouchUpInside];
+    cell.removeBtn.tag=indexPath.row;
     
     cell.selectionStyle=UITableViewCellSelectionStyleNone;
     
     return cell;
 }
 
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    self.completeBlockNSDictionary(dataArray[indexPath.row]);
+-(void)addGoodsNum:(UIButton*)btn{
+    
+    SeletedGoodsModel * model =dataArray[btn.tag];
+    model.goodNum=[NSString stringWithFormat:@"%zi",model.goodNum.integerValue+1];
+    [dataArray replaceObjectAtIndex:btn.tag withObject:model];
+    TABLERELOAD(tableview, btn.tag, 0);
+    
+}
+
+-(void)removeGoodsNum:(UIButton*)btn{
+    
+    SeletedGoodsModel * model =dataArray[btn.tag];
+    model.goodNum=[NSString stringWithFormat:@"%zi",model.goodNum.integerValue-1];
+    [dataArray replaceObjectAtIndex:btn.tag withObject:model];
+    TABLERELOAD(tableview, btn.tag, 0);
+}
+
+-(void)actNavRightBtn{
+    
+    NSMutableArray * array =[[NSMutableArray alloc] init];
+    
+    for(SeletedGoodsModel * model in dataArray){
+        
+        if(model.goodNum.integerValue!=0){
+            
+            [array addObject:model];
+        }
+    }
+    
+    if(array.count==0){
+        
+        [self showHint:@"请选择商品购买数量"];
+        return;
+    }
+    if(array.count>1){
+        
+        [self showHint:@"一次只能购买一种类型的商品"];
+        return;
+    }
+    
+    self.completeBlock(array[0]);
     [self.navigationController popViewControllerAnimated:YES];
 }
+
 @end

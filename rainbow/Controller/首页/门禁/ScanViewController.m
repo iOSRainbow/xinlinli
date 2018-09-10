@@ -7,7 +7,7 @@
 //
 
 #import "ScanViewController.h"
-
+#import "ReplactBatteryViewController.h"
 @interface ScanViewController ()
 
 @end
@@ -188,7 +188,9 @@
 
     if(sucess==1){
         
-        [self.navigationController popViewControllerAnimated:YES];
+        [self showHudInView:self.view hint:@"加载中"];
+        Api * api =[[Api alloc] init:self tag:@"cash_scanner"];
+        [api cash_scanner:qrcode];
         
     }else{
         
@@ -214,7 +216,16 @@
         NSString * urlString=metadataObject.stringValue;
         if(_type==1){
             
-            [self startConnect:urlString];
+            qrcode=urlString;
+            [self startConnect:qrcode];
+            return;
+        }else if (_type==2){
+            
+            ReplactBatteryViewController* battery =[[ReplactBatteryViewController alloc] init];
+            battery.number=urlString;
+            battery.year=_year;
+            [self.navigationController pushViewController:battery animated:YES];
+            
             return;
         }
         
@@ -223,4 +234,67 @@
     }
 }
 
+
+
+#pragma mark - Api回调
+- (void)Failed:(NSString*)message tag:(NSString*)tag
+{
+    [self hideHud];
+    [self showHint:message];
+}
+
+- (void)Sucess:(id)response tag:(NSString*)tag
+{
+    [self hideHud];
+    
+    
+    if([tag isEqualToString:@"cash_scanner"]){
+        
+        NSDictionary * dic =response[@"data"];
+        
+        name=dic[@"name"];
+        price=[NSString stringWithFormat:@"%@",dic[@"money"]];
+        number=[NSString stringWithFormat:@"%@",dic[@"number"]];
+        
+        if([LSFEasy isEmpty:name]&&[LSFEasy isEmpty:price]&&[LSFEasy isEmpty:number]){
+            
+            [self StartTimer];
+
+        }else{
+  
+  
+            NSString * str =[NSString stringWithFormat:@"恭喜你获得，%@(￥%@)",name,price];
+            
+            if([LSFEasy isEmpty:price]){
+                
+                str =[NSString stringWithFormat:@"恭喜你获得，%@(x%@)",name,number];
+            }
+            
+
+            UIAlertController *alert = [UIAlertController alertControllerWithTitle:str message:nil preferredStyle: UIAlertControllerStyleAlert];
+            
+            
+            UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"取消" style:(UIAlertActionStyleDefault) handler:nil];
+            [alert addAction:cancelAction];
+            
+            
+            UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"领取" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+                
+                [self showHudInView:self.view hint:@"加载中"];
+                Api * api =[[Api alloc] init:self tag:@"cash_exchange"];
+                [api cash_exchange:dic];
+                
+            }];
+            [alert addAction:okAction];
+            
+            [self presentViewController:alert animated:true completion:nil];
+        }
+
+    }else{
+        
+        [self showHint:response[@"msg"]];
+        [self StartTimer];
+        
+    }
+}
 @end

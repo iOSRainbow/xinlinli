@@ -60,6 +60,16 @@
 		0A0645471E78D0610077615E /* YYKVStorage.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A0645391E78D0610077615E /* YYKVStorage.m */; };
 		0A0645481E78D0610077615E /* YYMemoryCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A06453B1E78D0610077615E /* YYMemoryCache.m */; };
 		0A06454A1E78D2D90077615E /* libsqlite3.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A0645491E78D2D90077615E /* libsqlite3.0.tbd */; };
+		0A14010A21210AD6002D1387 /* RouteBtn.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A14010921210AD6002D1387 /* RouteBtn.m */; };
+		0A14010D212122A5002D1387 /* ShopCarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A14010C212122A5002D1387 /* ShopCarViewController.m */; };
+		0A14011021212800002D1387 /* ShopCarCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A14010F21212800002D1387 /* ShopCarCell.m */; };
+		0A14011321212814002D1387 /* ShopCarModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A14011221212814002D1387 /* ShopCarModel.m */; };
+		0A15A946213E45CB003D19C9 /* MyPoorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A15A945213E45CB003D19C9 /* MyPoorViewController.m */; };
+		0A15A949213E538D003D19C9 /* PayDespositViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A15A948213E538D003D19C9 /* PayDespositViewController.m */; };
+		0A15A94C213E6678003D19C9 /* PayRentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A15A94B213E6678003D19C9 /* PayRentViewController.m */; };
+		0A15A94F213E6D9F003D19C9 /* BatteryInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A15A94E213E6D9F003D19C9 /* BatteryInfoViewController.m */; };
+		0A15A952213F5889003D19C9 /* BatteryRecordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A15A951213F5889003D19C9 /* BatteryRecordViewController.m */; };
+		0A15A955213F6064003D19C9 /* ReplactBatteryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A15A954213F6064003D19C9 /* ReplactBatteryViewController.m */; };
 		0A19B18B1EC42AE600F3D29C /* ProviceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A19B18A1EC42AE600F3D29C /* ProviceViewController.m */; };
 		0A19B18E1EC42AEE00F3D29C /* CiytViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A19B18D1EC42AEE00F3D29C /* CiytViewController.m */; };
 		0A19B1911EC42AF900F3D29C /* AreaViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A19B1901EC42AF900F3D29C /* AreaViewController.m */; };
@@ -134,6 +144,8 @@
 		0A9D681E1EC09F9E00B3C966 /* LPlaceholderTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A9D681D1EC09F9E00B3C966 /* LPlaceholderTextView.m */; };
 		0A9D68211EC0A16500B3C966 /* MineAboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A9D68201EC0A16500B3C966 /* MineAboutViewController.m */; };
 		0A9D68241EC0A3A700B3C966 /* MineHtmlViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A9D68231EC0A3A700B3C966 /* MineHtmlViewController.m */; };
+		0A9F1CB0211D807A00DAAA7C /* SeletedGoodsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A9F1CAF211D807A00DAAA7C /* SeletedGoodsCell.m */; };
+		0A9F1CB3211D809200DAAA7C /* SeletedGoodsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A9F1CB2211D809200DAAA7C /* SeletedGoodsModel.m */; };
 		0AA89CB31EF91A71002FA4DC /* CommentListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AA89CB21EF91A71002FA4DC /* CommentListViewController.m */; };
 		0AADEF7C1EF7E2DC0061307D /* JZDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AADEF7B1EF7E2DC0061307D /* JZDetailViewController.m */; };
 		0AADEF7F1EF7EAB70061307D /* JZPayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AADEF7E1EF7EAB70061307D /* JZPayViewController.m */; };
@@ -349,6 +361,26 @@
 		0A06453A1E78D0610077615E /* YYMemoryCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYMemoryCache.h; sourceTree = "<group>"; };
 		0A06453B1E78D0610077615E /* YYMemoryCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YYMemoryCache.m; sourceTree = "<group>"; };
 		0A0645491E78D2D90077615E /* libsqlite3.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.0.tbd; path = usr/lib/libsqlite3.0.tbd; sourceTree = SDKROOT; };
+		0A14010821210AD6002D1387 /* RouteBtn.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RouteBtn.h; sourceTree = "<group>"; };
+		0A14010921210AD6002D1387 /* RouteBtn.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RouteBtn.m; sourceTree = "<group>"; };
+		0A14010B212122A5002D1387 /* ShopCarViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ShopCarViewController.h; sourceTree = "<group>"; };
+		0A14010C212122A5002D1387 /* ShopCarViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ShopCarViewController.m; sourceTree = "<group>"; };
+		0A14010E21212800002D1387 /* ShopCarCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ShopCarCell.h; sourceTree = "<group>"; };
+		0A14010F21212800002D1387 /* ShopCarCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ShopCarCell.m; sourceTree = "<group>"; };
+		0A14011121212814002D1387 /* ShopCarModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ShopCarModel.h; sourceTree = "<group>"; };
+		0A14011221212814002D1387 /* ShopCarModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ShopCarModel.m; sourceTree = "<group>"; };
+		0A15A944213E45CB003D19C9 /* MyPoorViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyPoorViewController.h; sourceTree = "<group>"; };
+		0A15A945213E45CB003D19C9 /* MyPoorViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyPoorViewController.m; sourceTree = "<group>"; };
+		0A15A947213E538D003D19C9 /* PayDespositViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PayDespositViewController.h; sourceTree = "<group>"; };
+		0A15A948213E538D003D19C9 /* PayDespositViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PayDespositViewController.m; sourceTree = "<group>"; };
+		0A15A94A213E6678003D19C9 /* PayRentViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PayRentViewController.h; sourceTree = "<group>"; };
+		0A15A94B213E6678003D19C9 /* PayRentViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PayRentViewController.m; sourceTree = "<group>"; };
+		0A15A94D213E6D9F003D19C9 /* BatteryInfoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BatteryInfoViewController.h; sourceTree = "<group>"; };
+		0A15A94E213E6D9F003D19C9 /* BatteryInfoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BatteryInfoViewController.m; sourceTree = "<group>"; };
+		0A15A950213F5889003D19C9 /* BatteryRecordViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BatteryRecordViewController.h; sourceTree = "<group>"; };
+		0A15A951213F5889003D19C9 /* BatteryRecordViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BatteryRecordViewController.m; sourceTree = "<group>"; };
+		0A15A953213F6064003D19C9 /* ReplactBatteryViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ReplactBatteryViewController.h; sourceTree = "<group>"; };
+		0A15A954213F6064003D19C9 /* ReplactBatteryViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ReplactBatteryViewController.m; sourceTree = "<group>"; };
 		0A19B1891EC42AE600F3D29C /* ProviceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProviceViewController.h; sourceTree = "<group>"; };
 		0A19B18A1EC42AE600F3D29C /* ProviceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProviceViewController.m; sourceTree = "<group>"; };
 		0A19B18C1EC42AEE00F3D29C /* CiytViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CiytViewController.h; sourceTree = "<group>"; };
@@ -498,6 +530,10 @@
 		0A9D68201EC0A16500B3C966 /* MineAboutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MineAboutViewController.m; sourceTree = "<group>"; };
 		0A9D68221EC0A3A700B3C966 /* MineHtmlViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MineHtmlViewController.h; sourceTree = "<group>"; };
 		0A9D68231EC0A3A700B3C966 /* MineHtmlViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MineHtmlViewController.m; sourceTree = "<group>"; };
+		0A9F1CAE211D807A00DAAA7C /* SeletedGoodsCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SeletedGoodsCell.h; sourceTree = "<group>"; };
+		0A9F1CAF211D807A00DAAA7C /* SeletedGoodsCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SeletedGoodsCell.m; sourceTree = "<group>"; };
+		0A9F1CB1211D809200DAAA7C /* SeletedGoodsModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SeletedGoodsModel.h; sourceTree = "<group>"; };
+		0A9F1CB2211D809200DAAA7C /* SeletedGoodsModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SeletedGoodsModel.m; sourceTree = "<group>"; };
 		0AA89CB11EF91A71002FA4DC /* CommentListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommentListViewController.h; sourceTree = "<group>"; };
 		0AA89CB21EF91A71002FA4DC /* CommentListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommentListViewController.m; sourceTree = "<group>"; };
 		0AADEF7A1EF7E2DC0061307D /* JZDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JZDetailViewController.h; sourceTree = "<group>"; };
@@ -795,6 +831,8 @@
 				0A00AFAD1E3194B800FC9312 /* LSFUtil.m */,
 				0A00AFAF1E319B8F00FC9312 /* LSFEasy.h */,
 				0A00AFB01E319B8F00FC9312 /* LSFEasy.m */,
+				0A14010821210AD6002D1387 /* RouteBtn.h */,
+				0A14010921210AD6002D1387 /* RouteBtn.m */,
 			);
 			path = Class;
 			sourceTree = "<group>";
@@ -993,6 +1031,25 @@
 			path = YYCache;
 			sourceTree = "<group>";
 		};
+		0A15A943213E45B8003D19C9 /* 我的电瓶 */ = {
+			isa = PBXGroup;
+			children = (
+				0A15A944213E45CB003D19C9 /* MyPoorViewController.h */,
+				0A15A945213E45CB003D19C9 /* MyPoorViewController.m */,
+				0A15A947213E538D003D19C9 /* PayDespositViewController.h */,
+				0A15A948213E538D003D19C9 /* PayDespositViewController.m */,
+				0A15A94A213E6678003D19C9 /* PayRentViewController.h */,
+				0A15A94B213E6678003D19C9 /* PayRentViewController.m */,
+				0A15A94D213E6D9F003D19C9 /* BatteryInfoViewController.h */,
+				0A15A94E213E6D9F003D19C9 /* BatteryInfoViewController.m */,
+				0A15A950213F5889003D19C9 /* BatteryRecordViewController.h */,
+				0A15A951213F5889003D19C9 /* BatteryRecordViewController.m */,
+				0A15A953213F6064003D19C9 /* ReplactBatteryViewController.h */,
+				0A15A954213F6064003D19C9 /* ReplactBatteryViewController.m */,
+			);
+			path = "我的电瓶";
+			sourceTree = "<group>";
+		};
 		0A19B1881EC42AAF00F3D29C /* 地址省市区类 */ = {
 			isa = PBXGroup;
 			children = (
@@ -1032,6 +1089,10 @@
 			children = (
 				0A9111D41F4A732B002DA009 /* GoodsCell.h */,
 				0A9111D51F4A732B002DA009 /* GoodsCell.m */,
+				0A9F1CAE211D807A00DAAA7C /* SeletedGoodsCell.h */,
+				0A9F1CAF211D807A00DAAA7C /* SeletedGoodsCell.m */,
+				0A14010E21212800002D1387 /* ShopCarCell.h */,
+				0A14010F21212800002D1387 /* ShopCarCell.m */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -1039,6 +1100,10 @@
 		0A20BE0F1EC00C960008857D /* model */ = {
 			isa = PBXGroup;
 			children = (
+				0A9F1CB1211D809200DAAA7C /* SeletedGoodsModel.h */,
+				0A9F1CB2211D809200DAAA7C /* SeletedGoodsModel.m */,
+				0A14011121212814002D1387 /* ShopCarModel.h */,
+				0A14011221212814002D1387 /* ShopCarModel.m */,
 			);
 			path = model;
 			sourceTree = "<group>";
@@ -1062,6 +1127,8 @@
 				0A216FFD2043F0F7003F2F6D /* SearchViewController.m */,
 				0A216FFF2043F953003F2F6D /* GoodTypeViewController.h */,
 				0A2170002043F953003F2F6D /* GoodTypeViewController.m */,
+				0A14010B212122A5002D1387 /* ShopCarViewController.h */,
+				0A14010C212122A5002D1387 /* ShopCarViewController.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1069,6 +1136,7 @@
 		0A20BE111EC00C960008857D /* 首页 */ = {
 			isa = PBXGroup;
 			children = (
+				0A15A943213E45B8003D19C9 /* 我的电瓶 */,
 				0A232B1920032B29005A0EFA /* 转盘活动 */,
 				0A6276A51F1C4745005CF8E8 /* 门禁 */,
 				0AD92A0C1ED3BAA200268F56 /* 物业缴费 */,
@@ -2055,7 +2123,7 @@
 		0ADA90661E304DE000812E3D /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0900;
+				LastUpgradeCheck = 0940;
 				ORGANIZATIONNAME = "李世飞";
 				TargetAttributes = {
 					0ADA906D1E304DE000812E3D = {
@@ -2170,11 +2238,13 @@
 				0AE3AE781EC2BC3000FA69AE /* ZLPhotoAssets.m in Sources */,
 				0AE3AE791EC2BC3000FA69AE /* ZLPhotoPickerDatas.m in Sources */,
 				0ADA90761E304DE000812E3D /* AppDelegate.m in Sources */,
+				0A15A94C213E6678003D19C9 /* PayRentViewController.m in Sources */,
 				0A03C7B91E82577F00642ECE /* UIImage+MultiFormat.m in Sources */,
 				0AE3AE811EC2BC3000FA69AE /* ZLPhotoPickerCollectionViewCell.m in Sources */,
 				0A20BE671EC0173C0008857D /* IQTitleBarButtonItem.m in Sources */,
 				0A20BE651EC0173C0008857D /* IQTextView.m in Sources */,
 				0AE3AEFD1EC2C14600FA69AE /* PSTCollectionViewData.m in Sources */,
+				0A15A94F213E6D9F003D19C9 /* BatteryInfoViewController.m in Sources */,
 				0AE3AE821EC2BC3000FA69AE /* ZLPhotoPickerFooterCollectionReusableView.m in Sources */,
 				0A3CFC241FC0251F00BD5584 /* CommonNavtionController.m in Sources */,
 				0AD0556B204E1E6600B0379B /* ActvityCell.m in Sources */,
@@ -2188,10 +2258,12 @@
 				0A2FE0421EF7C8EE008F007B /* JZListViewController.m in Sources */,
 				0AE3AEEA1EC2C14600FA69AE /* EMSDWebImageCompat.m in Sources */,
 				0A03C7BC1E82577F00642ECE /* UIImageView+WebCache.m in Sources */,
+				0A9F1CB3211D809200DAAA7C /* SeletedGoodsModel.m in Sources */,
 				0A0645481E78D0610077615E /* YYMemoryCache.m in Sources */,
 				0A0645431E78D0610077615E /* AFURLSessionManager.m in Sources */,
 				0AE3AF0C1EC2F8BD00FA69AE /* Mine_DuiHuanHLViewController.m in Sources */,
 				0A9D68091EC090A900B3C966 /* Mine_iphonViewController.m in Sources */,
+				0A15A949213E538D003D19C9 /* PayDespositViewController.m in Sources */,
 				0AE3AEFB1EC2C14600FA69AE /* PSTCollectionViewCell.m in Sources */,
 				0AE3AEF31EC2C14600FA69AE /* UIImage+EMGIF.m in Sources */,
 				0A20BE701EC04DE00008857D /* FFScrollView.m in Sources */,
@@ -2239,6 +2311,7 @@
 				0AE3AE841EC2BC3000FA69AE /* ZLPhotoPickerImageView.m in Sources */,
 				0A20BE771EC05DE00008857D /* GBTopLineViewModel.m in Sources */,
 				0AB764621EC6C56A00EE22D4 /* Friend.m in Sources */,
+				0A14011321212814002D1387 /* ShopCarModel.m in Sources */,
 				0A9D67FA1EC082A900B3C966 /* Mine_infoViewController.m in Sources */,
 				0A0645111E78CD0E0077615E /* MBProgressHUD.m in Sources */,
 				0AE3AE7F1EC2BC3000FA69AE /* ZLPhotoPickerViewController.m in Sources */,
@@ -2255,6 +2328,7 @@
 				0A20BE081EC00B710008857D /* MainTabViewController.m in Sources */,
 				0A9D68181EC09D0A00B3C966 /* Mine_modfy_accountViewController.m in Sources */,
 				0A1FDD611EC5726800CC9847 /* BaoXiuTypeViewController.m in Sources */,
+				0A14010A21210AD6002D1387 /* RouteBtn.m in Sources */,
 				0ABBAD1D1EC8020400E6C4D3 /* MJPhotoProgressView.m in Sources */,
 				0AE3AEEC1EC2C14600FA69AE /* EMSDWebImageDownloader.m in Sources */,
 				0A0645461E78D0610077615E /* YYDiskCache.m in Sources */,
@@ -2287,15 +2361,20 @@
 				0A3AFF8B20A56C3B00D14DF3 /* DoorCardRecordViewController.m in Sources */,
 				0A19B1941EC42B0700F3D29C /* RoomViewController.m in Sources */,
 				0AB764591EC6AE7300EE22D4 /* AddFriendViewController.m in Sources */,
+				0A14010D212122A5002D1387 /* ShopCarViewController.m in Sources */,
 				0AE3AE7B1EC2BC3000FA69AE /* UIViewController+Alert.m in Sources */,
 				0AADEF7F1EF7EAB70061307D /* JZPayViewController.m in Sources */,
 				0AE3AE761EC2BC3000FA69AE /* ZLPhotoPickerBrowserPhotoView.m in Sources */,
 				0AE3AE7E1EC2BC3000FA69AE /* ZLPhotoPickerGroupViewController.m in Sources */,
 				0AE3AEF11EC2C14600FA69AE /* NSData+EMImageContentType.m in Sources */,
+				0A15A946213E45CB003D19C9 /* MyPoorViewController.m in Sources */,
 				0A6EAD501ED1344A002F2C5A /* GuoQiViewController.m in Sources */,
+				0A9F1CB0211D807A00DAAA7C /* SeletedGoodsCell.m in Sources */,
 				0A03C7B61E82577F00642ECE /* SDWebImagePrefetcher.m in Sources */,
 				0AE3AEF61EC2C14600FA69AE /* UIImageView+EMHighlightedWebCache.m in Sources */,
 				0AFBDF3E2079AC3C007364EF /* WuYeTipModel.m in Sources */,
+				0A15A955213F6064003D19C9 /* ReplactBatteryViewController.m in Sources */,
+				0A15A952213F5889003D19C9 /* BatteryRecordViewController.m in Sources */,
 				0A03C7B41E82577F00642ECE /* SDWebImageDownloaderOperation.m in Sources */,
 				0AE3AF051EC2C14600FA69AE /* PSTGridLayoutSection.m in Sources */,
 				0ADC904D1ED7B1950089A980 /* ScanCropView.m in Sources */,
@@ -2310,6 +2389,7 @@
 				0A03C7B01E82577F00642ECE /* SDImageCache.m in Sources */,
 				0A20BE661EC0173C0008857D /* IQBarButtonItem.m in Sources */,
 				0AE3AE6E1EC2BC3000FA69AE /* ZLCameraView.m in Sources */,
+				0A14011021212800002D1387 /* ShopCarCell.m in Sources */,
 				0ABBAD191EC8020400E6C4D3 /* MJPhoto.m in Sources */,
 				0AB7645F1EC6C45B00EE22D4 /* NullSafe.m in Sources */,
 				0A9D68061EC08E2C00B3C966 /* Mine_PasswordViewController.m in Sources */,
@@ -2356,6 +2436,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -2363,6 +2444,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -2393,7 +2475,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
-				PROVISIONING_PROFILE = "6845c5ac-c539-42de-bfe0-da7bf5d6289b";
+				PROVISIONING_PROFILE = "988b4087-4482-4f09-af24-6f5855367afd";
 				PROVISIONING_PROFILE_SPECIFIER = xinLingLiDistri;
 				SDKROOT = iphoneos;
 			};
@@ -2413,6 +2495,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -2420,6 +2503,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -2443,7 +2527,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
-				PROVISIONING_PROFILE = "6845c5ac-c539-42de-bfe0-da7bf5d6289b";
+				PROVISIONING_PROFILE = "988b4087-4482-4f09-af24-6f5855367afd";
 				PROVISIONING_PROFILE_SPECIFIER = xinLingLiDistri;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
@@ -2477,7 +2561,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.nwh.xinlingli;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "6845c5ac-c539-42de-bfe0-da7bf5d6289b";
+				PROVISIONING_PROFILE = "988b4087-4482-4f09-af24-6f5855367afd";
 				PROVISIONING_PROFILE_SPECIFIER = xinLingLiDistri;
 			};
 			name = Debug;
@@ -2509,7 +2593,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.nwh.xinlingli;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "6845c5ac-c539-42de-bfe0-da7bf5d6289b";
+				PROVISIONING_PROFILE = "988b4087-4482-4f09-af24-6f5855367afd";
 				PROVISIONING_PROFILE_SPECIFIER = xinLingLiDistri;
 			};
 			name = Release;

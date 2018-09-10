@@ -15,7 +15,7 @@
     UIButton * startBtn;
     UILabel * jpLable;
     UITableView * tableview;
-    NSInteger result;
+    NSInteger result,status;
     NSTimer * timer;
     NSString * prizesname,*username;
     
@@ -25,6 +25,7 @@
     NSTimer * actvityTimer;
     NSInteger timerTag,endTimerTag,tag;
     NSArray * dataArray,*prizesrecordCustoms;
+    
 
 }
 @end

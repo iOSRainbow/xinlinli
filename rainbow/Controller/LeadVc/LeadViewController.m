@@ -18,6 +18,9 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
+//    [LSFUtil addSubviewImage:@"leader" rect:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT) View:self.view Tag:1];
+    
+    
     webview=[[UIWebView alloc] initWithFrame:CGRectMake(0, -StatusHeight, SCREEN_WIDTH, SCREEN_HEIGHT+StatusHeight)];
     [webview sizeToFit];
     [self.view addSubview:webview];
@@ -72,8 +75,10 @@
 
     NSDictionary * dic=response[@"data"];
     
+
     [webview loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:dic[@"href"]]]];
 
+    
 }
 
 

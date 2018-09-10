@@ -11,7 +11,7 @@
 {
     UIView *navView,*emptyView;
     
-    UIButton *navLeftBtn,*navRightBtn;
+    UIButton *navLeftBtn,*navRightBtn,*navBackBtn;
     
     UILabel *navTitleLable;
     BOOL isModal;//是否是模态视图
@@ -45,7 +45,7 @@
 -(UIButton*)buttonPhotoAlignment:(NSString*)photo hilPhoto:(NSString*)Hphoto rect:(CGRect)rect  title:(NSString*)title  select:(SEL)sel Tag:(NSInteger)tag View:(UIView*)ViewA textColor:(UIColor*)textcolor Size:(UIFont*)size background:(UIColor *)background;
 
 #pragma mark -几个参数block
-@property (nonatomic,copy)  void(^completeBlockNone)();
+@property (nonatomic,copy)  void(^completeBlockNone)(void);
 @property (nonatomic,copy)  void(^completeBlockNSString)(NSString *completeStr);
 @property (nonatomic,copy)  void(^completeBlockNSArray)(NSArray *completeAry);
 @property (nonatomic,copy)  void(^completeBlockNSDictionary)(NSDictionary *completedic);

@@ -18,10 +18,14 @@
         self.pic=[LSFUtil addSubviewImage:nil rect:CGRectMake((self.frame.size.width-60)/2, 0, 60,60) View:self Tag:1];
         
         
-        self.name=[LSFUtil labelName:nil fontSize:font12 rect:CGRectMake(0,60,self.frame.size.width, 20) View:self Alignment:1 Color:black Tag:2];
+        self.labName=[LSFUtil labelName:nil fontSize:font12 rect:CGRectMake(0,55,self.frame.size.width, 35) View:self Alignment:1 Color:black Tag:2];
         
     }
     
     return self;
 }
+
+
+    
+
 @end

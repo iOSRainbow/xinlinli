@@ -23,8 +23,8 @@
 #import "JZTypeListViewController.h"
 #import "JZDetailViewController.h"
 #import "RuleViewController.h"
-#import "ScanViewController.h"
-
+#import "MyPoorViewController.h"
+#import "ActvtiyViewController.h"
 #define Rate 280/640
 #define TopScrollHeigt SCREEN_WIDTH*Rate
 @interface HomeViewController ()
@@ -52,8 +52,8 @@
         dataArray=[array mutableCopy];
     }
     else{
-    NSArray * ary =[[NSArray alloc] initWithObjects:@"门禁",@"车位锁",@"居家服务",@"室内环保",@"家政服务",@"家电清洗",@"邻里圈",@"更多分类", nil];
-    NSArray * ary1=@[@"lsf48",@"lsf92",@"lsf49",@"lsf96",@"lsf97",@"lsf98",@"lsf52",@"lsf74"];
+    NSArray * ary =[[NSArray alloc] initWithObjects:@"我的电瓶",@"车位锁",@"居家服务",@"室内环保",@"家政服务",@"家电清洗",@"邻里圈",@"更多分类", nil];
+    NSArray * ary1=@[@"icon_battery",@"lsf92",@"lsf49",@"lsf96",@"lsf97",@"lsf98",@"lsf52",@"lsf74"];
     for(int i=0;i<ary.count;i++){
         
         NSDictionary * dic=@{@"name":ary[i],@"pic":ary1[i]};
@@ -128,8 +128,6 @@
 -(void)allocMenuClassView;
 {
     
-    NSLog(@"%@",dataArray);
-
     CGFloat hy=100;
     
     if(dataArray.count>4){
@@ -252,34 +250,20 @@
         
         [self.navigationController pushViewController:list animated:YES];
     }
-    else if ([str isEqualToString:@"门禁"]){
-        
-        ScanViewController * list =[[ScanViewController alloc] init];
-        
-        list.hidesBottomBarWhenPushed=YES;
-        list.type=1;
-        [self.navigationController pushViewController:list animated:YES];
-        
-    }else if ([str isEqualToString:@"邻里圈"]){
+     else if ([str isEqualToString:@"邻里圈"]){
         
         FriendListViewController * list =[[FriendListViewController alloc] init];
-        
         list.hidesBottomBarWhenPushed=YES;
-        
         [self.navigationController pushViewController:list animated:YES];
         
     }else if ([str isEqualToString:@"礼品兑换"]){
         
         Mine_DuiHuanListViewController * list =[[Mine_DuiHuanListViewController alloc] init];
-        
         list.hidesBottomBarWhenPushed=YES;
-        
         [self.navigationController pushViewController:list animated:YES];
-        
     }
     else if ([str isEqualToString:@"车位锁"]){
     
-        
         OpeationBusViewController * fail =[[OpeationBusViewController alloc] init];
         fail.hidesBottomBarWhenPushed=YES;
         [self.navigationController pushViewController:fail animated:YES];
@@ -291,7 +275,6 @@
         list.name=str;
         list.type=@"bc492fc4-3060-4ad8-aaaf-87c837ffefda";
         [self.navigationController pushViewController:list animated:YES];
-        
     }
     else if([str isEqualToString:@"室内环保"]){
         
@@ -324,20 +307,24 @@
         __weak typeof(self) weakSelf=self;
         list.completeBlockMutableArray=^(NSMutableArray *ary){
         
-            dataArray=ary;
-            [myUserDefaults setObject:dataArray forKey:@"main_type"];
+            self->dataArray=ary;
+            [myUserDefaults setObject:self->dataArray forKey:@"main_type"];
             [myUserDefaults synchronize];
             [weakSelf allocMenuClassView];
-        
         };
         list.dicAray=dataArray;
         
         list.hidesBottomBarWhenPushed=YES;
-        
         [self.navigationController pushViewController:list animated:YES];
+    
+    }else if ([str isEqualToString:@"我的电瓶"]){
+        
+     
+        MyPoorViewController * poor =[[MyPoorViewController alloc] init];
+        poor.hidesBottomBarWhenPushed=YES;
+        [self.navigationController pushViewController:poor animated:YES];
         
     }
-
 }
 
 
@@ -494,10 +481,14 @@
     
         if(![LSFEasy isEmpty:href]){
             
-            RuleViewController * list =[[RuleViewController alloc] init];
+            ActvtiyViewController * list =[[ActvtiyViewController alloc] init];
             list.hidesBottomBarWhenPushed=YES;
-            list.webUrl=[NSString stringWithFormat:@"%@&userId=%@",href,TOKEN];
             [self.navigationController pushViewController:list animated:YES];
+            
+//            RuleViewController * list =[[RuleViewController alloc] init];
+//            list.hidesBottomBarWhenPushed=YES;
+//            list.webUrl=[NSString stringWithFormat:@"%@&userId=%@",href,TOKEN];
+//            [self.navigationController pushViewController:list animated:YES];
             
         }
     }

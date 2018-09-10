@@ -252,6 +252,8 @@
 -(void)app_prizes_setPrizesData;
 
 
+-(void)app_prizes_receivePrizesData;
+
 //家政维护首页
 -(void)goods_jjfwIndex;
 
@@ -290,4 +292,50 @@
 
 //挂失
 -(void)usercard_loss:(NSString*)cardId;
+
+
+//加入购物车
+-(void)shoppingcar_addCar:(NSString*)goodId message:(NSString*)message count:(NSInteger)count;
+
+
+//购物车列表
+-(void)shoppingcar_carList;
+
+
+//删除购物车得商品
+-(void)shoppingcar_deleteCar:(NSString*)goodId;
+
+
+//修改购物车-商品数量
+-(void)shoppingcar_updateCar:(NSString*)goodId message:(NSString*)message count:(NSInteger)count;
+
+//查看是否有抽奖资格
+-(void)cash_scanner:(NSString*)qrcode;
+
+//领取抽奖
+-(void)cash_exchange:(NSDictionary*)dict;
+
+//我的电瓶首页数据
+-(void)battery_getUserbatterybyUserId;
+
+//获取押金列表
+-(void)battery_getbatteryTypeList;
+
+//支付押金
+-(void)battery_addDeposit:(NSString*)deposit;
+
+//支付租金
+-(void)battery_addRent:(NSString*)year;
+
+//获取更换记录
+-(void)battery_getOldBatteryList;
+
+//退押金
+-(void)battery_returnDeposit;
+
+//更换电池扫一扫获取数据
+-(void)battery_scan:(NSString*)number year:(NSString*)year;
+
+//支付更换电池费用
+-(void)battery_exchange:(NSString*)number year:(NSString*)year;
 @end

@@ -806,14 +806,19 @@
     
     NSMutableDictionary *params = [[NSMutableDictionary alloc] init];
     [params setObject:TOKEN forKey:@"userId"];
-    [httpRequest httpPostRequest:@"app/prizes/getPrizesData.do" params:params];
+    [httpRequest httpPostRequest:@"app/ninePrizes/getPrizesData.do" params:params];
 }
-
+-(void)app_prizes_receivePrizesData{
+    
+    NSMutableDictionary *params = [[NSMutableDictionary alloc] init];
+    [params setObject:TOKEN forKey:@"userId"];
+    [httpRequest httpPostRequest:@"app/ninePrizes/receivePrize.do" params:params];
+}
 -(void)app_prizes_setPrizesData{
     
     NSMutableDictionary *params = [[NSMutableDictionary alloc] init];
     [params setObject:TOKEN forKey:@"userId"];
-    [httpRequest httpPostRequest:@"app/prizes/setPrizesData.do" params:params];
+    [httpRequest httpPostRequest:@"app/ninePrizes/setPrizesData.do" params:params];
 }
 
 
@@ -914,5 +919,149 @@
     [params setObject:TOKEN forKey:@"userId"];
     [params setObject:cardId forKey:@"id"];
     [httpRequest httpPostRequest:@"app/usercard/loss.do" params:params];
+}
+
+
+//加入购物车
+-(void)shoppingcar_addCar:(NSString*)goodId message:(NSString*)message count:(NSInteger)count{
+    
+    NSMutableDictionary *params = [[NSMutableDictionary alloc] init];
+    [params setObject:TOKEN forKey:@"userId"];
+    [params setObject:goodId forKey:@"goodId"];
+    [params setObject:message forKey:@"message"];
+    [params setObject:[NSNumber numberWithInteger:count] forKey:@"count"];
+    [httpRequest httpPostRequest:@"app/shoppingcar/addCar.do" params:params];
+}
+
+
+
+//购物车列表
+-(void)shoppingcar_carList{
+    
+    NSMutableDictionary *params = [[NSMutableDictionary alloc] init];
+    [params setObject:TOKEN forKey:@"userId"];
+    [httpRequest httpPostRequest:@"app/shoppingcar/carList.do" params:params];
+
+}
+
+
+
+//删除购物车得商品
+-(void)shoppingcar_deleteCar:(NSString*)goodId{
+    
+    NSMutableDictionary *params = [[NSMutableDictionary alloc] init];
+    [params setObject:TOKEN forKey:@"userId"];
+    [params setObject:goodId forKey:@"id"];
+    [httpRequest httpPostRequest:@"app/shoppingcar/deleteCar.do" params:params];
+
+}
+
+
+//修改购物车-商品数量
+-(void)shoppingcar_updateCar:(NSString*)goodId message:(NSString*)message count:(NSInteger)count{
+    
+    NSMutableDictionary *params = [[NSMutableDictionary alloc] init];
+    [params setObject:TOKEN forKey:@"userId"];
+    [params setObject:goodId forKey:@"id"];
+    [params setObject:message forKey:@"message"];
+    [params setObject:[NSNumber numberWithInteger:count] forKey:@"count"];
+    [httpRequest httpPostRequest:@"app/shoppingcar/updateCar.do" params:params];
+}
+
+
+//查看是否有抽奖资格
+-(void)cash_scanner:(NSString*)qrcode{
+    
+    NSMutableDictionary *params = [[NSMutableDictionary alloc] init];
+    [params setObject:TOKEN forKey:@"userId"];
+    [params setObject:qrcode forKey:@"qrcode"];
+    [httpRequest httpPostRequest:@"app/cash/scanner.do" params:params];
+}
+
+//领取抽奖
+-(void)cash_exchange:(NSDictionary*)dict{
+    
+    NSMutableDictionary *params = [[NSMutableDictionary alloc] init];
+    [params setObject:TOKEN forKey:@"userId"];
+    [params setObject:dict[@"name"] forKey:@"name"];
+    [params setObject:dict[@"money"] forKey:@"money"];
+    [params setObject:dict[@"number"] forKey:@"number"];
+    [httpRequest httpPostRequest:@"app/cash/exchange.do" params:params];
+}
+
+//我的电瓶首页数据
+-(void)battery_getUserbatterybyUserId{
+    
+    NSMutableDictionary *params = [[NSMutableDictionary alloc] init];
+    [params setObject:TOKEN forKey:@"userId"];
+    [httpRequest httpPostRequest:@"app/battery/getUserbatterybyUserId.do" params:params];
+}
+
+//获取押金列表
+-(void)battery_getbatteryTypeList{
+    
+    NSMutableDictionary *params = [[NSMutableDictionary alloc] init];
+    [params setObject:TOKEN forKey:@"userId"];
+    [httpRequest httpPostRequest:@"app/battery/getbatteryTypeList.do" params:params];
+}
+
+
+//支付押金
+-(void)battery_addDeposit:(NSString*)deposit{
+    
+    NSMutableDictionary *params = [[NSMutableDictionary alloc] init];
+    [params setObject:TOKEN forKey:@"userId"];
+    [params setObject:deposit forKey:@"deposit"];
+    [httpRequest httpPostRequest:@"app/battery/addDeposit.do" params:params];
+}
+
+
+//支付租金
+-(void)battery_addRent:(NSString*)year{
+    
+    NSMutableDictionary *params = [[NSMutableDictionary alloc] init];
+    [params setObject:TOKEN forKey:@"userId"];
+    [params setObject:year forKey:@"year"];
+    [httpRequest httpPostRequest:@"app/battery/addRent.do" params:params];
+}
+
+
+//获取更换记录
+-(void)battery_getOldBatteryList{
+    
+    NSMutableDictionary *params = [[NSMutableDictionary alloc] init];
+    [params setObject:TOKEN forKey:@"userId"];
+    [httpRequest httpPostRequest:@"app/battery/getOldBatteryList.do" params:params];
+}
+
+
+//退押金
+-(void)battery_returnDeposit{
+    
+    NSMutableDictionary *params = [[NSMutableDictionary alloc] init];
+    [params setObject:TOKEN forKey:@"userId"];
+    [httpRequest httpPostRequest:@"app/battery/returnDeposit.do" params:params];
+}
+
+
+//更换电池扫一扫获取数据
+-(void)battery_scan:(NSString*)number year:(NSString*)year{
+    
+    NSMutableDictionary *params = [[NSMutableDictionary alloc] init];
+    [params setObject:TOKEN forKey:@"userId"];
+    [params setObject:year forKey:@"year"];
+    [params setObject:number forKey:@"number"];
+    [httpRequest httpPostRequest:@"app/battery/scan.do" params:params];
+}
+
+
+//支付更换电池费用
+-(void)battery_exchange:(NSString*)number year:(NSString*)year{
+    
+    NSMutableDictionary *params = [[NSMutableDictionary alloc] init];
+    [params setObject:TOKEN forKey:@"userId"];
+    [params setObject:year forKey:@"year"];
+    [params setObject:number forKey:@"number"];
+    [httpRequest httpPostRequest:@"app/battery/exchange.do" params:params];
 }
 @end

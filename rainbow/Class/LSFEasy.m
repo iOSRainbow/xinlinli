@@ -236,4 +236,34 @@
     
 }
 
+
++(NSMutableAttributedString*)ButtonAttriSring:(NSString *)title color:(UIColor*)color image:(NSString*)image type:(NSInteger)type rect:(CGRect)rect
+{
+    // 添加表情
+    NSTextAttachment *attch = [[NSTextAttachment alloc] init];
+    // 表情图片
+    attch.image = [UIImage imageNamed:image];
+    // 设置图片大小
+    attch.bounds =rect;
+    
+    NSMutableAttributedString *attri =[[NSMutableAttributedString alloc] initWithString:[NSString stringWithFormat:@"%@",title]];
+    // 创建带有图片的富文本
+    NSAttributedString *string = [NSAttributedString attributedStringWithAttachment:attch];
+    
+    [attri addAttribute:NSForegroundColorAttributeName
+     
+                  value:color
+     
+                  range:NSMakeRange(0, title.length)];
+    
+    if(type==1){
+        [attri insertAttributedString:string atIndex:0];
+    }else{
+        [attri appendAttributedString:string];
+    }
+    
+    return attri;
+    
+}
+
 @end

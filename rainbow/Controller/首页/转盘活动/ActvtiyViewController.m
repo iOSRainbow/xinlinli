@@ -9,11 +9,11 @@
 #import "ActvtiyViewController.h"
 
 
-#define Rate 440/730
+#define Rate 229/660
 #define TopBannerHeight SCREEN_WIDTH*Rate
 
 
-#define Rate1 360/706
+#define Rate1 115/294
 #define bottomHeight SCREEN_WIDTH*Rate1
 
 @interface ActvtiyViewController ()
@@ -22,16 +22,36 @@
 
 @implementation ActvtiyViewController
 
+-(void)actNavRightBtn{
+    
+    if([navRightBtn.titleLabel.text isEqualToString:@"未领取"]){
+        
+        
+        UIAlertController *alert=[UIAlertController alertControllerWithTitle:@"是否确认领取奖品？" message:nil preferredStyle:UIAlertControllerStyleAlert];
+        UIAlertAction *action=[UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:nil];
+        [alert addAction:action];
+        action=[UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+            
+            [self stopTimer];
+            [self showHudInView:self.view hint:@"加载中"];
+            Api * api =[[Api alloc] init:self tag:@"app_prizes_receivePrizesData"];
+            [api app_prizes_receivePrizesData];
+        }];
+        [alert addAction:action];
+        [self presentViewController:alert animated:YES completion:nil];
+        
+    }
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    self.view.backgroundColor=MS_RGB(250, 194, 111);
-    navView.hidden=YES;
-    
+    [self setNavTitle:@"文化节"];
+    [self addNavRightBtnWithTitle:nil color:Red];
     
     timerTag=0;
- dataArray=@[@{@"pic":@"8",@"name":@"鼠"},@{@"pic":@"9",@"name":@"牛"},@{@"pic":@"10",@"name":@"虎"},@{@"pic":@"11",@"name":@"兔"},@{@"pic":@"12",@"name":@"龙"},@{@"pic":@"13",@"name":@"蛇"},@{@"pic":@"14",@"name":@"马"},@{@"pic":@"15",@"name":@"羊"},@{@"pic":@"16",@"name":@"猴"},@{@"pic":@"17",@"name":@"鸡"},@{@"pic":@"18",@"name":@"狗"},@{@"pic":@"19",@"name":@"猪"}];
+    dataArray=@[@{@"pic":@"300抵用卷",@"name":@"壁挂式空调清洗券"},@{@"pic":@"300抵用卷",@"name":@"30元充电电费券"},@{@"pic":@"300抵用卷",@"name":@"30元共享电瓶安装券"},@{@"pic":@"300抵用卷",@"name":@"30元充电电费券"},@{@"pic":@"300抵用卷",@"name":@"30元共享电瓶安装券"},@{@"pic":@"300抵用卷",@"name":@"壁挂式空调清洗券"}];
     gouArray=[[NSMutableArray alloc] init];
     
     for(int i=0;i<dataArray.count;i++){
@@ -40,19 +60,16 @@
     }
     
     
-    scr=[LSFUtil add_scollview:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT) Tag:1 View:self.view co:CGSizeMake(0,SCREEN_HEIGHT)];
+    scr=[LSFUtil add_scollview:CGRectMake(0,NavigationHeight, SCREEN_WIDTH, ViewHeight) Tag:1 View:self.view co:CGSizeMake(0,ViewHeight)];
+    scr.backgroundColor=MS_RGB(231, 65, 67);
     
-    [LSFUtil addSubviewImage:@"1" rect:CGRectMake(0,0,SCREEN_WIDTH,TopBannerHeight) View:scr Tag:1];
-    
-    [LSFUtil viewWithRect:CGRectMake(0, TopBannerHeight, SCREEN_WIDTH, 15) view:scr backgroundColor:white];
+    [LSFUtil addSubviewImage:@"文字特" rect:CGRectMake(0,5,SCREEN_WIDTH,TopBannerHeight) View:scr Tag:1];
     
     [self initCollectionView:TopBannerHeight+25];
     
-    [LSFUtil addSubviewImage:@"2" rect:CGRectMake((SCREEN_WIDTH-443/2)/2,TopBannerHeight-7.5,443/2,57/2) View:scr Tag:1];
     
     [self getData];
     
-    [self buttonPhotoAlignment:@"lsf7" hilPhoto:@"lsf7" rect:CGRectMake(5, StatusHeight+7, 30, 30) title:0 select:@selector(actNavBack) Tag:0 View:self.view textColor:nil Size:nil background:nil];
 
 }
 -(void)actNavBack{
@@ -61,14 +78,14 @@
 }
 -(void)initCollectionView:(CGFloat)hy{
     
-    UIView * view =[LSFUtil viewWithRect:CGRectMake(10, hy, SCREEN_WIDTH-20, 310+101/2.5) view:scr backgroundColor:MS_RGB(254, 242, 203)];
+    UIView * view =[LSFUtil viewWithRect:CGRectMake(10, hy, SCREEN_WIDTH-20, 220+101/2.5) view:scr backgroundColor:MS_RGB(254, 242, 203)];
     view.layer.cornerRadius=5;
     view.layer.masksToBounds=YES;
     
     UICollectionViewFlowLayout *flowLayout = [[UICollectionViewFlowLayout alloc]init];
     
     //创建一个UICollectionView对象
-    collectionView = [[UICollectionView alloc]initWithFrame:CGRectMake(0,0, view.frame.size.width,280) collectionViewLayout:flowLayout];
+    collectionView = [[UICollectionView alloc]initWithFrame:CGRectMake(0,0, view.frame.size.width,190) collectionViewLayout:flowLayout];
     collectionView.backgroundColor=MS_RGB(254, 242, 203);
     //指定数据源代理
     collectionView.dataSource = self;
@@ -81,7 +98,7 @@
     [view addSubview:collectionView];
     
     
-    startBtn=[LSFUtil buttonPhotoAlignment:@"3" hilPhoto:@"3" rect:CGRectMake((view.frame.size.width-381/2.5)/2, 300, 381/2.5, 101/2.5) title:nil Tag:1 View:view textColor:nil Size:nil];
+    startBtn=[LSFUtil buttonPhotoAlignment:@"3" hilPhoto:@"3" rect:CGRectMake((view.frame.size.width-381/2.5)/2, 210, 381/2.5, 101/2.5) title:nil Tag:1 View:view textColor:nil Size:nil];
     [startBtn addTarget:self action:@selector(StartActivity) forControlEvents:UIControlEventTouchUpInside];
     
     
@@ -102,35 +119,38 @@
     
     timerTag++;
     
+    if(timerTag<=6){
+        
+        tag=timerTag-1;
+    }
+    else if (timerTag<=12){
+        
+        tag=timerTag-7;
+    }
+    else if (timerTag<=18){
+        
+        tag=timerTag-13;
+    }
+ 
+    [self reloadData];
+
+    
     if(timerTag==endTimerTag){
         
+        
         [self stopActivtyTimer];
+        
         startBtn.enabled=YES;
-
-        if(timerTag>12){
-            tag=timerTag-12;
-            [self reloadData];
-        }
         
         [self startTimer];
         NSString * str =@"恭喜您抽中";
         jpLable.attributedText=[self UILableAttriSring:Red title1:str title2:prizesname];
         
+        [navRightBtn setTitle:@"未领取" forState:normal];
+        
+        
         UIAlertView * alret =[[UIAlertView alloc] initWithTitle:@"中奖啦" message:[NSString stringWithFormat:@"%@ %@",str,prizesname] delegate:nil cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
         [alret show];
-        
-        
-    }else{
-        
-        if(timerTag>12){
-            
-            tag=timerTag-12;
-        }
-        else{
-            
-            tag=timerTag-1;
-        }
-        [self reloadData];
     }
  
 }
@@ -165,7 +185,7 @@
      [self stopTimer];
      [self stopActivtyTimer];
      startBtn.enabled=NO;
-    
+    timerTag=0;
     [self showHudInView:self.view hint:@"加载中"];
     Api * api =[[Api alloc] init:self tag:@"app_prizes_setPrizesData"];
     [api app_prizes_setPrizesData];
@@ -188,7 +208,7 @@
     
     [self stopTimer];
     
-    timer =[NSTimer scheduledTimerWithTimeInterval:10 target:self selector:@selector(getData) userInfo:nil repeats:YES];
+    timer =[NSTimer scheduledTimerWithTimeInterval:5 target:self selector:@selector(getData) userInfo:nil repeats:YES];
 
 }
 -(void)stopTimer{
@@ -240,9 +260,9 @@
 -(void)allocBotoomView:(CGFloat)hy{
     
     //706 × 360
-    [LSFUtil addSubviewImage:@"6" rect:CGRectMake(0,hy, SCREEN_WIDTH, bottomHeight) View:scr Tag:1];
+    [LSFUtil addSubviewImage:@"文字特2" rect:CGRectMake((SCREEN_WIDTH-294/2)/2,hy, 294/2, 115/2) View:scr Tag:1];
     
-    scr.contentSize=CGSizeMake(0, hy+bottomHeight+5);
+    scr.contentSize=CGSizeMake(0, hy+65+TabbarStautsHeight);
     
 }
 
@@ -270,42 +290,63 @@
     if([tag isEqualToString:@"app_prizes_getPrizesData"]){
    
         NSDictionary * dic=response[@"data"];
-        NSDictionary * json =dic[@"prizesrecordCustom"];
+        NSDictionary * json =dic[@"nineUserPrizeCustom"];
 
         result =[dic[@"result"] integerValue];
+        status =[json[@"status"] integerValue];
+
         if(result==0){
             
             [jpLable setAttributedText:nil];
             jpLable.text=@"您还未抽奖";
+            [navRightBtn setTitle:@"未抽奖" forState:normal];
         }
         else{
             
             jpLable.text=nil;
             NSString * str =@"恭喜您抽中";
             NSString * str2=json[@"prizesname"];
-            
             [jpLable setAttributedText:[self UILableAttriSring:Red title1:str title2:str2]];
+            
+            [navRightBtn setTitle:status==0?@"未领取":@"已领取" forState:normal];
         }
         
-        prizesrecordCustoms=dic[@"prizesrecordCustoms"];
+        prizesrecordCustoms=dic[@"nineUserPrizeCustoms"];
         [tableview reloadData];
-        
       
     }
     if([tag isEqualToString:@"app_prizes_setPrizesData"]){
    
-        prizesrecordCustoms=response[@"data"][@"prizesrecordCustoms"];
+        prizesrecordCustoms=response[@"data"][@"nineUserPrizeCustoms"];
         [tableview reloadData];
         
         result =[response[@"data"][@"result"] integerValue];
         
-        NSDictionary * dic=response[@"data"][@"prizesrecordCustom"];
+        NSDictionary * dic=response[@"data"][@"nineUserPrizeCustom"];
         username=dic[@"username"];
         prizesname=dic[@"prizesname"];
 
-        endTimerTag =13+arc4random() % 12;
+        __block NSInteger index =0;
+        [dataArray enumerateObjectsUsingBlock:^(NSDictionary* dict, NSUInteger idx, BOOL * _Nonnull stop) {
+           
+            if([self->prizesname isEqualToString:dict[@"name"]]){
+                
+                index=idx;
+                *stop=YES;
+            }
+            
+        }];
+        
+        
+        endTimerTag =13+index;
         
         [self startActivtyTimer];
+    }
+    if([tag isEqualToString:@"app_prizes_receivePrizesData"]){
+        
+        [navRightBtn setTitle:@"已领取" forState:normal];
+        [self startTimer];
+
     }
 }
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
@@ -349,7 +390,7 @@
     
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
     [formatter setDateFormat:@"yyyy-MM-dd HH:mm"];
-    NSDate *confromTimesp = [NSDate dateWithTimeIntervalSince1970:[time integerValue]/1000];
+    NSDate *confromTimesp = [NSDate dateWithTimeIntervalSince1970:[time doubleValue]/1000];
     NSString *confromTimespStr = [formatter stringFromDate:confromTimesp];
     
     return  [LSFEasy isEmpty:time]?@" ":confromTimespStr;
@@ -385,16 +426,30 @@
     NSDictionary * dic =[dataArray objectAtIndex:indexPath.row];
     
     cell.pic.image=[UIImage imageNamed:dic[@"pic"]];
-    cell.name.text=[dic objectForKey:@"name"];
+    cell.labName.text=dic[@"name"];
     NSInteger a =[gouArray[indexPath.row] integerValue];
-    cell.name.textColor=a==0?black:Red;
+    
+    
+    
+    if(a==1){
+        
+        cell.pic.layer.borderWidth=1;
+        cell.pic.layer.borderColor=Red.CGColor;
+        cell.labName.textColor=Red;
+    }
+    else{
+        
+        cell.pic.layer.borderWidth=0;
+        cell.pic.layer.borderColor=[UIColor clearColor].CGColor;
+        cell.labName.textColor=black;
+    }
     
     return cell;
 }
 
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath{
     
-    NSInteger collectWidth=(SCREEN_WIDTH-20-(4+1)*5)/4;
+    NSInteger collectWidth=(SCREEN_WIDTH-20-(3+1)*5)/3;
 
     return CGSizeMake(collectWidth,90);
 }

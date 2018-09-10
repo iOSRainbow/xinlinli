@@ -10,5 +10,5 @@
 
 @interface ActvityCell : UICollectionViewCell
 @property(nonatomic,strong)UIImageView * pic;
-@property(nonatomic,strong)UILabel * name;
+@property(nonatomic,strong)UILabel * labName;
 @end

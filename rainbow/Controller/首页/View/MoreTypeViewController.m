@@ -51,10 +51,10 @@
     [self setNavTitle:@"全部分类"];
     [self addNavRightBtnWithTitle:@"完成" rect:CGRectMake(SCREEN_WIDTH-80, StatusHeight+2, 80, 40)];
     self.view.backgroundColor=white;
-    gouArray=[[NSMutableArray alloc] initWithObjects:@"0",@"0",@"0",@"0",@"0",@"0",@"0",@"0",@"0",@"0", nil];
+    gouArray=[[NSMutableArray alloc] initWithObjects:@"0",@"0",@"0",@"0",@"0",@"0",@"0",@"0",@"0",@"0",@"0", nil];
     
-    nameArray =[[NSMutableArray alloc] initWithObjects:@"物业公告",@"物业维修",@"门禁",@"车位锁",@"居家服务",@"邻里圈",@"礼品兑换",@"室内环保",@"家政服务",@"家电清洗", nil];
-    imgArray=[[NSMutableArray alloc] initWithObjects:@"lsf46",@"lsf47",@"lsf48",@"lsf92",@"lsf52",@"lsf49",@"lsf50",@"lsf96",@"lsf97",@"lsf98",nil];
+    nameArray =[[NSMutableArray alloc] initWithObjects:@"物业公告",@"物业维修",@"车位锁",@"居家服务",@"邻里圈",@"礼品兑换",@"室内环保",@"家政服务",@"家电清洗",@"我的电瓶", nil];
+    imgArray=[[NSMutableArray alloc] initWithObjects:@"lsf46",@"lsf47",@"lsf92",@"lsf52",@"lsf49",@"lsf50",@"lsf96",@"lsf97",@"lsf98",@"icon_battery",nil];
 
     
     for(int i=0;i<_dicAray.count;i++){
@@ -70,10 +70,7 @@
                 [gouArray replaceObjectAtIndex:j withObject:@"1"];
             }
         }
-    
-    
     }
-    
     
     
     menuView =[LSFUtil viewWithRect:CGRectMake(0,NavigationHeight+15, SCREEN_WIDTH, 300) view:self.view backgroundColor:white];
